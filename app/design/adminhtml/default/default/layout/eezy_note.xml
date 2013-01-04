@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout>
+	<note_admin_tag_new>
+		<reference name="content">
+			<block type="note/adminhtml_tag_edit_form" name="tag_edit_form" template="eezy/note/tag/edit.phtml"/>
+		</reference>
+	</note_admin_tag_new>
+	<note_admin_tag_edit>
+		<reference name="content">
+			<block type="note/adminhtml_tag_edit_form" name="tag_edit_form" template="eezy/note/tag/edit.phtml"/>
+		</reference>
+	</note_admin_tag_edit>
+	<note_admin_tag_index>
+		<reference name="content">
+			<block type="note/adminhtml_tag_grid" name="tag_edit_form"/>
+		</reference>
+	</note_admin_tag_index>
+	<note_admin_tag_grid>
+		<block type="core/text_list" name="root" output="toHtml">
+			<block type="note/adminhtml_tag_grid" name="tag_edit_form"/>
+		</block>
+	</note_admin_tag_grid>
+	
+	
+	<note_admin_article_new>
+		<reference name="content">
+			<block type="note/adminhtml_article_edit_form" name="article_edit_form" template="eezy/note/article/edit.phtml"/>
+		</reference>
+	</note_admin_article_new>
+</layout>
