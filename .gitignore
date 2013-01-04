@@ -568,3 +568,4 @@ var/
 /app/design/adminhtml/default/default/template/xmlconnect/submission/app_icons_preview.phtml
 /app/design/adminhtml/default/default/template/xmlconnect/submission/container.phtml
 /app/design/adminhtml/default/default/template/xmlconnect/template/preview.phtml
+/.project
