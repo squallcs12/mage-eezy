@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <modules>
+        <Game_Describe>
+            <version>1.0.0</version>
+        </Game_Describe>
+    </modules>
+    <global>
+        <models>
+            <describe>
+                <class>Game_Describe_Model</class>
+                <resourceModel>describe_mysql4</resourceModel>
+            </describe>
+            <describe_mysql4>
+                <class>Game_Describe_Model_Mysql4</class>
+                <entities>
+                	
+                </entities>
+            </describe_mysql4>
+        </models>
+        <resources>
+            <describe_setup>
+                <setup>
+                    <module>Game_Describe</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </describe_setup>
+            <describe_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </describe_write>
+            <describe_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </describe_read>
+        </resources>
+        <helpers>
+            <describe>
+                <class>Game_Describe_Helper</class>
+            </describe>
+        </helpers>
+	</global>
+</config>
