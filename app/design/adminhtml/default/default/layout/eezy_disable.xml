@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout version="0.1.0">
+	<adminhtml_dashboard_index>
+		<reference name="content">
+	        <remove name="dashboard" />
+	    </reference>
+	</adminhtml_dashboard_index>
+</layout>
