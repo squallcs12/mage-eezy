@@ -1,4 +1,4 @@
-div.didyouknow{
+div.didyouknow > div{
 	background: url('../images/cloud.png') center center no-repeat;
 	width: 142px;
 	height: 121px;
@@ -11,7 +11,7 @@ div.didyouknow{
 	display: table-cell;
 	vertical-align: middle;
 }
-div.didyouknow > div{
+div.didyouknow > div > div{
 	margin: auto;
 }
 .page-empty.didyouknow-index-random{

@@ -4,10 +4,22 @@
 $block = $this;
 ?>
 <div id="" class="didyouknow random">
-	<div><?php echo $this->getQuote()->getContent(); ?></div>
+	<div>
+		<div><?php echo $this->getQuote()->getContent(); ?></div>
+	</div>
 </div>
 <script>
 setInterval(function(){
-	jQuery(".didyouknow.random").load("?isAjax=1");
-}, 20000);
+	(function($){
+		$.ajax({
+			url : "?isAjax=1",
+			success: function(data){
+				$(".didyouknow.random").animate({marginLeft: '-70px', 'opacity' : 0}, 500, function(){
+					$(".didyouknow.random > div > div").html(data);
+					$(".didyouknow.random").animate({marginLeft: '0px', 'opacity' : 1}, 500);
+				});
+			}
+		});
+	})(jQuery);
+}, 5000);
 </script>
