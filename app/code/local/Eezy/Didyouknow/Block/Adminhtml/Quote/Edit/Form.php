@@ -11,7 +11,7 @@ class Eezy_Didyouknow_Block_Adminhtml_Quote_Edit_Form extends Mage_Adminhtml_Blo
 		$this -> setForm($form);
 		$fieldset = $form -> addFieldset('quote_form', array('legend' => Mage::helper('didyouknow') -> __('Add quote')));
 
-		$fieldset -> addField('content', 'editor', array('label' => Mage::helper('didyouknow') -> __('Content'), 'class' => 'required-entry', 'required' => true, 'name' => 'name', ));
+		$fieldset -> addField('content', 'editor', array('label' => Mage::helper('didyouknow') -> __('Content'), 'class' => 'required-entry', 'required' => true, 'name' => 'content', ));
 
 		$fieldset -> addField('status', 'select', array('label' => Mage::helper('didyouknow') -> __('Status'), 'name' => 'status', 'values' => array( array('value' => 1, 'label' => Mage::helper('didyouknow') -> __('Active'), ), array('value' => 0, 'label' => Mage::helper('didyouknow') -> __('Inactive'), ), ), ));
 
