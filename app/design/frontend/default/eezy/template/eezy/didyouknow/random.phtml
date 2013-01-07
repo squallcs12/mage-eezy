@@ -1,16 +1,13 @@
 <?php
 
+/* @var $block Eezy_Didyouknow_Block_Random */
 $block = $this;
-/**
- *
- * @var Eezy_Didyouknow_Block_Random $this
- */
 ?>
 <div id="" class="didyouknow random">
 	<div><?php echo $this->getQuote()->getContent(); ?></div>
 </div>
 <script>
-setTimeout(function(){
-	location.reload();
+setInterval(function(){
+	jQuery(".didyouknow.random").load("?isAjax=1");
 }, 20000);
 </script>
