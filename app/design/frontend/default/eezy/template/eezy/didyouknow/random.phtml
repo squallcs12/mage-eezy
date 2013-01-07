@@ -15,8 +15,8 @@ setInterval(function(){
 			url : "?isAjax=1",
 			success: function(data){
 				$(".didyouknow.random").animate({marginLeft: '-70px', 'opacity' : 0}, 500, function(){
-					$(".didyouknow.random > div > div").html(data);
-					$(".didyouknow.random").animate({marginLeft: '0px', 'opacity' : 1}, 500);
+					$("div > div", this).html(data);
+					$(this).animate({marginLeft: '0px', 'opacity' : 1}, 500);
 				});
 			}
 		});
