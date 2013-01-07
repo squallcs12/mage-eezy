@@ -1,5 +1,11 @@
 <?php
 
 $block = $this;
-
-var_dump($this->_quote);
+/**
+ *
+ * @var Eezy_Didyouknow_Block_Random $this
+ */
+?>
+<div id="" class="didyouknow random">
+	<div><?php echo $this->getQuote()->getContent(); ?></div>
+</div>

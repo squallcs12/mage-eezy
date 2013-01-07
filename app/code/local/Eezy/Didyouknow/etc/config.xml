@@ -2,7 +2,7 @@
 <config>
 	<modules>
 		<Eezy_Didyouknow>
-			<version>0.1.0</version>
+			<version>1.1.0</version>
 		</Eezy_Didyouknow>
 	</modules>
 	<global>
@@ -51,6 +51,15 @@
             </didyouknow_read>
         </resources>
 	</global>
+	<frontend>
+        <layout>
+        	<updates>
+        		<didyouknow>
+        			<file>eezy_didyouknow.xml</file>
+        		</didyouknow>
+        	</updates>
+        </layout>
+	</frontend>
 	<admin>
 		<routers>
 			<didyouknow>

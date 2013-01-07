@@ -1,0 +1,16 @@
+div.didyouknow{
+	background: url('../images/cloud.png') center center no-repeat;
+	width: 142px;
+	height: 121px;
+	padding: 23px 49px;
+	color: black;
+	font-family: tahoma;
+	font-size: 12px;
+	font-weight: bold;
+	text-align: center;
+	display: table-cell;
+	vertical-align: middle;
+}
+div.didyouknow > div{
+	margin: auto;
+}
