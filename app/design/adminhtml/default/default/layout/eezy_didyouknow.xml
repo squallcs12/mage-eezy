@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout>
+	<didyouknow_admin_quote_new>
+		<reference name="content">
+			<block type="didyouknow/adminhtml_quote_edit_form" name="quote_edit_form" template="eezy/didyouknow/quote/edit.phtml"/>
+		</reference>
+	</didyouknow_admin_quote_new>
+	<didyouknow_admin_quote_edit>
+		<reference name="content">
+			<block type="didyouknow/adminhtml_quote_edit_form" name="quote_edit_form" template="eezy/didyouknow/quote/edit.phtml"/>
+		</reference>
+	</didyouknow_admin_quote_edit>
+	<didyouknow_admin_quote_index>
+		<reference name="content">
+			<block type="didyouknow/adminhtml_quote_grid" name="quote_edit_form"/>
+		</reference>
+	</didyouknow_admin_quote_index>
+	<didyouknow_admin_quote_grid>
+		<block type="core/text_list" name="root" output="toHtml">
+			<block type="didyouknow/adminhtml_quote_grid" name="quote_edit_form"/>
+		</block>
+	</didyouknow_admin_quote_grid>
+</layout>
