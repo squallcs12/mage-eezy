@@ -34,9 +34,10 @@ class Eezy_Didyouknow_Admin_QuoteController extends Mage_Adminhtml_Controller_Ac
                 $postData = $this->getRequest()->getPost();
                 $quoteModel = Mage::getModel('didyouknow/quote');
                
-                $quoteModel->setId($this->getRequest()->getParam('id'))
+                $quoteModel
                     ->setData($postData)
-                    ->save();
+                	->setId($this->getRequest()->getParam('id'));
+                    $quoteModel->save();
                
                 Mage::getSingleton('adminhtml/session')->addSuccess(Mage::helper('adminhtml')->__('Item was successfully saved'));
                 Mage::getSingleton('adminhtml/session')->setnoteData(false);

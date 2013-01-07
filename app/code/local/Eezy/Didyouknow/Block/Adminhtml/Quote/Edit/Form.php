@@ -4,7 +4,7 @@ class Eezy_Didyouknow_Block_Adminhtml_Quote_Edit_Form extends Mage_Adminhtml_Blo
 	protected function _prepareForm() {
 		$form = new Varien_Data_Form();
 		$form -> setUseContainer(true);
-		$form -> setAction($this -> getUrl('*/*/save'));
+		$form -> setAction($this -> getUrl('*/*/save', array('_current' => true)));
 		$form -> setMethod('post');
 		$form -> setId('edit_form');
 
@@ -15,6 +15,7 @@ class Eezy_Didyouknow_Block_Adminhtml_Quote_Edit_Form extends Mage_Adminhtml_Blo
 
 		$fieldset -> addField('status', 'select', array('label' => Mage::helper('didyouknow') -> __('Status'), 'name' => 'status', 'values' => array( array('value' => 1, 'label' => Mage::helper('didyouknow') -> __('Active'), ), array('value' => 0, 'label' => Mage::helper('didyouknow') -> __('Inactive'), ), ), ));
 
+		
 		if (Mage::getSingleton('adminhtml/session') -> getDidyouknowQuoteData()) {
 			$form -> setValues(Mage::getSingleton('adminhtml/session') -> getDidyouknowQuoteData());
 			Mage::getSingleton('adminhtml/session') -> setDidyouknowQuoteData(null);
