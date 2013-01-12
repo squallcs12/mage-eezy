@@ -41,4 +41,36 @@ class Eezy_Didyouknow_Helper_Data extends Mage_Core_Helper_Abstract {
 		return Mage::getModel('didyouknow/quote') -> load($id);
 	}
 
+	public function getRandomQuotes($count){
+		$temp = $this->getQuoteIds();
+		if(count($temp) > $count){
+			$keys = array_rand($temp, $count);
+			$ids = array();
+			foreach($keys as $key)
+				$ids[] = $key;
+		} else {
+			$ids = $temp;
+		}
+		
+		/* @var @quotes Eezy_Didyouknow_Model_Mysql4_Quote_Collection */
+		$quotes = Mage::getSingleton('didyouknow/quote')
+						->getCollection()
+						->addFieldToFilter('id', array('in' => $ids))
+						;
+		return $quotes;
+	}
+	
+	/**
+	 * Get json quote setences
+	 * @param unknown_type $count
+	 */
+	public function getJsonQuotes($count = 20){
+		/* @var @quotes Eezy_Didyouknow_Model_Mysql4_Quote_Collection */
+		$quotes = Mage::helper ( 'didyouknow' )->getRandomQuotes ($count);
+		$quoteTexts = array();
+		foreach($quotes as $quote)
+			$quoteTexts[] = $quote->getContent();
+	
+		return Mage::helper('core')->jsonEncode($quoteTexts);
+	}
 }

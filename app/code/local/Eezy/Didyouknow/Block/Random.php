@@ -8,4 +8,8 @@ class Eezy_Didyouknow_Block_Random extends Mage_Core_Block_Template {
 		
 		return parent::_prepareLayout ();
 	}
+	
+	public function getJsonQuotes($count = 20){
+		return Mage::helper('didyouknow')->getJsonQuotes($count);
+	}
 }

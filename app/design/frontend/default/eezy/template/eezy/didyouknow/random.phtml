@@ -9,17 +9,25 @@ $block = $this;
 	</div>
 </div>
 <script>
-setInterval(function(){
-	(function($){
-		$.ajax({
-			url : "?isAjax=1",
-			success: function(data){
-				$(".didyouknow.random").animate({marginLeft: '-70px', 'opacity' : 0}, 500, function(){
-					$("div > div", this).html(data);
-					$(this).animate({marginLeft: '0px', 'opacity' : 1}, 500);
-				});
-			}
+(function($){
+	var quotes = <?php echo $this->getJsonQuotes() ?>;
+	var count = 0;
+	setInterval(function(){
+		count++;
+		if(count >= quotes.length){
+			$.ajax({
+				url: '?isAjax=1',
+				type: 'json',
+				success: function(data){
+					quotes = data;
+				}
+			});
+		}
+		var quote = quotes[Math.floor(Math.random() * quotes.length)];
+		$(".didyouknow.random").animate({marginLeft: '-70px', 'opacity' : 0}, 500, function(){
+			$("div > div", this).html(quote);
+			$(this).animate({marginLeft: '0px', 'opacity' : 1}, 500);
 		});
-	})(jQuery);
-}, <?php echo $block->getInterval() ? $block->getInterval() : 20000 ?>);
+	}, <?php echo $block->getInterval() ? $block->getInterval() : 20000 ?>);
+})(jQuery)
 </script>
