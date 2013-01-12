@@ -17,6 +17,12 @@
                     <tag>
                         <table>eezy_note_tag</table>
                     </tag>
+                    <article>
+                        <table>eezy_note_article</table>
+                    </article>
+                    <article_tag>
+                        <table>eezy_note_article_tag</table>
+                    </article_tag>
                 </entities>
 			</note_mysql4>
 		</models>
@@ -24,6 +30,9 @@
 			<note>
 				<class>Eezy_Note_Block</class>
 			</note>
+			<note_adminhtml>
+				<class>Eezy_Note_Block_Adminhtml</class>
+			</note_adminhtml>
 		</blocks>
 		<helpers>
 			<note>

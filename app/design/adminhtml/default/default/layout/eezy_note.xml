@@ -1,30 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <layout>
-	<note_admin_tag_new>
+	<note_adminhtml_tag_new>
 		<reference name="content">
 			<block type="note/adminhtml_tag_edit_form" name="tag_edit_form" template="eezy/note/tag/edit.phtml"/>
 		</reference>
-	</note_admin_tag_new>
-	<note_admin_tag_edit>
+	</note_adminhtml_tag_new>
+	<note_adminhtml_tag_edit>
 		<reference name="content">
 			<block type="note/adminhtml_tag_edit_form" name="tag_edit_form" template="eezy/note/tag/edit.phtml"/>
 		</reference>
-	</note_admin_tag_edit>
-	<note_admin_tag_index>
+	</note_adminhtml_tag_edit>
+	<note_adminhtml_tag_index>
 		<reference name="content">
-			<block type="note/adminhtml_tag_grid" name="tag_edit_form"/>
+			<block type="note/adminhtml_tag_grid" name="tag_grid"/>
 		</reference>
-	</note_admin_tag_index>
-	<note_admin_tag_grid>
+	</note_adminhtml_tag_index>
+	<note_adminhtml_tag_grid>
 		<block type="core/text_list" name="root" output="toHtml">
 			<block type="note/adminhtml_tag_grid" name="tag_edit_form"/>
 		</block>
-	</note_admin_tag_grid>
+	</note_adminhtml_tag_grid>
 	
-	
-	<note_admin_article_new>
+	<note_adminhtml_article_new>
+        <reference name="menu">
+            <action method="setActive"><menupath>note/article/new</menupath></action>
+        </reference>
+        <reference name="left">
+            <block type="note_adminhtml/article_edit_tabs" name="note.admin.article.edit.tabs"/>
+        </reference>
+        <reference name="content">
+            <block type="note_adminhtml/article_edit" name="note.admin.article.edit"/>
+        </reference>
+        <reference name="js">
+            <block type="adminhtml/template" name="adminhtml.permissions.user.roles.grid.js" template="permissions/user_roles_grid_js.phtml"/>
+        </reference>
+    </note_adminhtml_article_new>
+	<note_adminhtml_article_edit>
+        <reference name="menu">
+            <action method="setActive"><menupath>note/article/new</menupath></action>
+        </reference>
+        <reference name="left">
+            <block type="note_adminhtml/article_edit_tabs" name="note.admin.article.edit.tabs"/>
+        </reference>
+        <reference name="content">
+            <block type="note_adminhtml/article_edit" name="note.admin.article.edit"/>
+        </reference>
+        <reference name="js">
+            <block type="adminhtml/template" name="adminhtml.permissions.user.roles.grid.js" template="permissions/user_roles_grid_js.phtml"/>
+        </reference>
+    </note_adminhtml_article_edit>
+    <note_adminhtml_article_index>
+        <reference name="menu">
+            <action method="setActive"><menupath>note/article</menupath></action>
+        </reference>
 		<reference name="content">
-			<block type="note/adminhtml_article_edit_form" name="article_edit_form" template="eezy/note/article/edit.phtml"/>
+			<block type="note/adminhtml_article_grid" name="article_grid"/>
 		</reference>
-	</note_admin_article_new>
+    </note_adminhtml_article_index>
+	<note_adminhtml_article_grid>
+		<block type="core/text_list" name="root" output="toHtml">
+			<block type="note/adminhtml_article_grid" name="article_grid"/>
+		</block>
+	</note_adminhtml_article_grid>
+	<note_adminhtml_article_tag>
+		<block type="core/text_list" name="root" output="toHtml">
+			<block type="note/adminhtml_article_edit_tag" name="article_edit_tag"/>
+			<block type="adminhtml/widget_grid_serializer" name="article_edit_tag_serializer">
+                <reference name="article_edit_tag_serializer">
+                    <action method="initSerializerBlock">
+                        <grid_block_name>article_edit_tag</grid_block_name>
+                        <data_callback>getArticleTags</data_callback>
+                        <hidden_input_name>links[tag]</hidden_input_name>
+                        <reload_param_name>article_edit_tag</reload_param_name>
+                    </action>
+                    <action method="addColumnInputName">
+                        <input_name>position</input_name>
+                    </action>
+                </reference>
+            </block>
+		</block>
+	</note_adminhtml_article_tag>
 </layout>
