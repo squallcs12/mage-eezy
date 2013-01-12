@@ -69,15 +69,17 @@
                 <reference name="article_edit_tag_serializer">
                     <action method="initSerializerBlock">
                         <grid_block_name>article_edit_tag</grid_block_name>
-                        <data_callback>getArticleTags</data_callback>
-                        <hidden_input_name>links[tag]</hidden_input_name>
+                        <data_callback>getSelectedTags</data_callback>
+                        <hidden_input_name>tags</hidden_input_name>
                         <reload_param_name>article_edit_tag</reload_param_name>
-                    </action>
-                    <action method="addColumnInputName">
-                        <input_name>position</input_name>
                     </action>
                 </reference>
             </block>
 		</block>
 	</note_adminhtml_article_tag>
+	<note_adminhtml_article_tagajax>
+		<block type="core/text_list" name="root" output="toHtml">
+			<block type="note/adminhtml_article_edit_tag" name="article_edit_tag"/>
+		</block>
+	</note_adminhtml_article_tagajax>
 </layout>

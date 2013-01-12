@@ -42,7 +42,6 @@ class Eezy_Note_Adminhtml_ArticleController extends Mage_Adminhtml_Controller_Ac
 	 * Upload image/file and update post data
 	 */
 	public function upload() {
-		var_dump($_POST);die;
 		$request = $this->getRequest ();
 		
 		$path = Mage::getBaseDir ( 'media' ) . DS . 'article' . DS;
@@ -74,15 +73,17 @@ class Eezy_Note_Adminhtml_ArticleController extends Mage_Adminhtml_Controller_Ac
 	public function saveAction() {
 		if ($this->getRequest ()->getPost ()) {
 			try {
-				
 				$this->upload ();
 				
 				$postData = $this->getRequest ()->getPost ();
 				
 				$this->_loadArticle();
 				$noteModel = Mage::registry('note_article');
-				
+				var_dump($postData);
 				$noteModel->setData ( $postData )->setId ( $this->getRequest ()->getParam ( 'id' ) )->save ();
+				
+				if(isset($postData['tags']))
+					$noteModel->saveTag(explode('&', $postData['tags']));
 				
 				Mage::getSingleton ( 'adminhtml/session' )->addSuccess ( Mage::helper ( 'adminhtml' )->__ ( 'Article was successfully saved' ) );
 				Mage::getSingleton ( 'adminhtml/session' )->setNoteArticleData ( false );
@@ -167,6 +168,12 @@ class Eezy_Note_Adminhtml_ArticleController extends Mage_Adminhtml_Controller_Ac
 		$this->_redirect ( '*/*/index' );
 	}
 	public function tagAction() {
+		$this->_loadArticle();
+		$this->loadLayout ();
+		$this->renderLayout ();
+	}
+	
+	public function tagAjaxAction() {
 		$this->_loadArticle();
 		$this->loadLayout ();
 		$this->renderLayout ();
