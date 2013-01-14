@@ -15,13 +15,7 @@ $block = $this;
 	setInterval(function(){
 		count++;
 		if(count >= quotes.length){
-			$.ajax({
-				url: '?isAjax=1',
-				type: 'json',
-				success: function(data){
-					quotes = data;
-				}
-			});
+
 		}
 		var quote = quotes[Math.floor(Math.random() * quotes.length)];
 		$(".didyouknow.random").animate({marginLeft: '-70px', 'opacity' : 0}, 500, function(){
