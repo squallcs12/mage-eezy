@@ -22,11 +22,16 @@
 					<sort_order>2</sort_order>
 					<action>note/adminhtml_tag/index</action>
 					<children>
-						<note_tag_new translate="title" module="note">
+						<new translate="title" module="note">
 							<title>New Tag</title>
 							<sort_order>1</sort_order>
 							<action>note/adminhtml_tag/new</action>
-						</note_tag_new>
+						</new>
+						<cloud>
+							<title>Tags Cloud</title>
+							<sort_order>2</sort_order>
+							<action>note/adminhtml_tag_cloud/index</action>
+						</cloud>
 					</children>
 				</note_tag>
 			</children>

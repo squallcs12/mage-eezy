@@ -17,6 +17,9 @@
                     <tag>
                         <table>eezy_note_tag</table>
                     </tag>
+                    <tag_cloud>
+                        <table>eezy_note_tag_cloud</table>
+                    </tag_cloud>
                     <article>
                         <table>eezy_note_article</table>
                     </article>

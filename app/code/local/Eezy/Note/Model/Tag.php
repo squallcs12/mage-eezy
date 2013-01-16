@@ -7,6 +7,7 @@ class Eezy_Note_Model_Tag extends Mage_Core_Model_Abstract {
 	}
 	/**
 	 * Get tree for form input
+	 * 
 	 * @return array
 	 */
 	public function getTree() {
@@ -21,6 +22,7 @@ class Eezy_Note_Model_Tag extends Mage_Core_Model_Abstract {
 	}
 	/**
 	 * Get tree hash for grid view
+	 * 
 	 * @return array
 	 */
 	public function getTreeHash() {
@@ -34,10 +36,11 @@ class Eezy_Note_Model_Tag extends Mage_Core_Model_Abstract {
 	
 	/**
 	 * Create tag tree
-	 * @param array $tree
-	 * @param array $tags
-	 * @param int $parentId
-	 * @param int $level
+	 * 
+	 * @param array $tree        	
+	 * @param array $tags        	
+	 * @param int $parentId        	
+	 * @param int $level        	
 	 */
 	protected function createTree(&$tree, $tags, $parentId, $level) {
 		if ($level == 0) {
@@ -59,10 +62,17 @@ class Eezy_Note_Model_Tag extends Mage_Core_Model_Abstract {
 			}
 		}
 	}
+	/**
+	 * (non-PHPdoc)
+	 * @see Mage_Core_Model_Abstract::save()
+	 */
+	public function save() {
+		if (! $this->getParentId ())
+			$this->setParentId ( null );
+		parent::save ();
+	}
 	
-	public function save(){
-		if(!$this->getParentId())
-			$this->setParentId(null);
-		parent::save();
+	public function getUrl(){
+		return 'abc';
 	}
 }

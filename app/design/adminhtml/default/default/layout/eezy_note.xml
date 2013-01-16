@@ -82,4 +82,17 @@
 			<block type="note/adminhtml_article_edit_tag" name="article_edit_tag"/>
 		</block>
 	</note_adminhtml_article_tagajax>
+	
+	
+	<note_adminhtml_tag_cloud_index>
+		<reference name="content">
+			<block type="note/adminhtml_tag_cloud_grid" name="tag_cloud_grid"/>
+		</reference>
+	</note_adminhtml_tag_cloud_index>
+	
+	<note_adminhtml_tag_cloud_grid>
+		<block type="core/text_list" name="root" output="toHtml">
+			<block type="note/adminhtml_tag_cloud_grid" name="tag_cloud_grid"/>
+		</block>
+	</note_adminhtml_tag_cloud_grid>
 </layout>
