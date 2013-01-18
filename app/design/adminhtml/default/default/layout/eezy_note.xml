@@ -83,7 +83,6 @@
 		</block>
 	</note_adminhtml_article_tagajax>
 	
-	
 	<note_adminhtml_tag_cloud_index>
 		<reference name="content">
 			<block type="note/adminhtml_tag_cloud_grid" name="tag_cloud_grid"/>

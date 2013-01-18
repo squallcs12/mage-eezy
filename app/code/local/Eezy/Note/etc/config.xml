@@ -26,6 +26,9 @@
                     <article_tag>
                         <table>eezy_note_article_tag</table>
                     </article_tag>
+                    <article_hot>
+                        <table>eezy_note_article_hot</table>
+                    </article_hot>
                 </entities>
 			</note_mysql4>
 		</models>

@@ -41,7 +41,7 @@ class Eezy_Note_Block_Adminhtml_Tag_Cloud_Grid extends Mage_Adminhtml_Block_Widg
 		$tagIds = $this->getTagIds ();
 		if (! is_array ( $tagIds )) {
 			/* @var @$tagCloud Eezy_Note_Model_Tag_Cloud */
-			$tagCloud = Mage::getSingleton ( 'note/tag_cloud' );
+			$tagCloud = Mage::getModel ( 'note/tag_cloud' );
 			$tagIds = $tagCloud->getCollection ()->getAllIds ();
 			$this->setTagIds ( $tagIds );
 		}
