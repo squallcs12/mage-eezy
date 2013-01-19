@@ -10,6 +10,7 @@ class Eezy_Note_Adminhtml_ArticleController extends Mage_Adminhtml_Controller_Ac
 	
 	/**
 	 * Load article along with request
+	 * 
 	 * @return Eezy_Note_Adminhtml_ArticleController
 	 */
 	protected function _loadArticle() {
@@ -18,8 +19,6 @@ class Eezy_Note_Adminhtml_ArticleController extends Mage_Adminhtml_Controller_Ac
 		Mage::register ( 'note_article', $article );
 		return $this;
 	}
-	
-	
 	public function editAction() {
 		$this->_loadArticle ();
 		$this->loadLayout ();
@@ -77,13 +76,13 @@ class Eezy_Note_Adminhtml_ArticleController extends Mage_Adminhtml_Controller_Ac
 				
 				$postData = $this->getRequest ()->getPost ();
 				
-				$this->_loadArticle();
-				$noteModel = Mage::registry('note_article');
-				var_dump($postData);
+				$this->_loadArticle ();
+				$noteModel = Mage::registry ( 'note_article' );
+				var_dump ( $postData );
 				$noteModel->setData ( $postData )->setId ( $this->getRequest ()->getParam ( 'id' ) )->save ();
 				
-				if(isset($postData['tags']))
-					$noteModel->saveTag(explode('&', $postData['tags']));
+				if (isset ( $postData ['tags'] ))
+					$noteModel->saveTag ( explode ( '&', $postData ['tags'] ) );
 				
 				Mage::getSingleton ( 'adminhtml/session' )->addSuccess ( Mage::helper ( 'adminhtml' )->__ ( 'Article was successfully saved' ) );
 				Mage::getSingleton ( 'adminhtml/session' )->setNoteArticleData ( false );
@@ -116,7 +115,7 @@ class Eezy_Note_Adminhtml_ArticleController extends Mage_Adminhtml_Controller_Ac
 	public function massDeleteAction() {
 		$quotesIds = $this->getRequest ()->getParam ( 'article' );
 		if (! is_array ( $quotesIds )) {
-			Mage::getSingleton ( 'adminhtml/session' )->addError ( Mage::helper ( 'adminhtml' )->__ ( 'Please select quote(s).' ) );
+			Mage::getSingleton ( 'adminhtml/session' )->addError ( Mage::helper ( 'adminhtml' )->__ ( 'Please select article(s).' ) );
 		} else {
 			try {
 				$quote = Mage::getModel ( 'note/article' );
@@ -131,10 +130,60 @@ class Eezy_Note_Adminhtml_ArticleController extends Mage_Adminhtml_Controller_Ac
 		
 		$this->_redirect ( '*/*/index' );
 	}
+	public function massHotAction() {
+		$articleIds = $this->getRequest ()->getParam ( 'article' );
+		if (! is_array ( $articleIds )) {
+			Mage::getSingleton ( 'adminhtml/session' )->addError ( Mage::helper ( 'adminhtml' )->__ ( 'Please select article(s).' ) );
+		} else {
+			try {
+				/* @var $articleHot Eezy_Note_Model_Article_Hot */
+				$articleHot = Mage::getModel ( 'note/article_hot' );
+				foreach ( $articleIds as $articleId ) {
+					try{
+						$articleHot->reset ()->setArticleId ( $articleId )->save ();
+					}
+					catch(Zend_Db_Statement_Exception $ex){
+						if($ex->getCode() != 23000)
+							throw $ex;
+					}
+				}
+				Mage::getSingleton ( 'adminhtml/session' )->addSuccess ( Mage::helper ( 'adminhtml' )->__ ( 'Total of %d article(s) were marked as hot.', count ( $articleIds ) ) );
+			} catch ( Exception $e ) {
+				Mage::getSingleton ( 'adminhtml/session' )->addError ( $e->getMessage () );
+			}
+		}
+		
+		$this->_redirect ( '*/*/index' );
+	}
+	public function massUnhotAction() {
+		$articleIds = $this->getRequest ()->getParam ( 'article' );
+		if (! is_array ( $articleIds )) {
+			Mage::getSingleton ( 'adminhtml/session' )->addError ( Mage::helper ( 'adminhtml' )->__ ( 'Please select article(s).' ) );
+		} else {
+			try {
+				/* @var $articleHot Eezy_Note_Model_Article_Hot */
+				$articleHot = Mage::getModel ( 'note/article_hot' );
+				foreach ( $articleIds as $articleId ) {
+					try{
+						$articleHot->reset()->load($articleId, 'article_id')->delete();
+					}
+					catch(Zend_Db_Statement_Exception $ex){
+						if($ex->getCode() != 23000)
+							throw $ex;
+					}
+				}
+				Mage::getSingleton ( 'adminhtml/session' )->addSuccess ( Mage::helper ( 'adminhtml' )->__ ( 'Total of %d article(s) were marked as hot.', count ( $articleIds ) ) );
+			} catch ( Exception $e ) {
+				Mage::getSingleton ( 'adminhtml/session' )->addError ( $e->getMessage () );
+			}
+		}
+		
+		$this->_redirect ( '*/*/index' );
+	}
 	public function massActiveAction() {
 		$quotesIds = $this->getRequest ()->getParam ( 'article' );
 		if (! is_array ( $quotesIds )) {
-			Mage::getSingleton ( 'adminhtml/session' )->addError ( Mage::helper ( 'adminhtml' )->__ ( 'Please select quote(s).' ) );
+			Mage::getSingleton ( 'adminhtml/session' )->addError ( Mage::helper ( 'adminhtml' )->__ ( 'Please select article(s).' ) );
 		} else {
 			try {
 				$quote = Mage::getModel ( 'note/article' );
@@ -152,7 +201,7 @@ class Eezy_Note_Adminhtml_ArticleController extends Mage_Adminhtml_Controller_Ac
 	public function massDeactiveAction() {
 		$quotesIds = $this->getRequest ()->getParam ( 'article' );
 		if (! is_array ( $quotesIds )) {
-			Mage::getSingleton ( 'adminhtml/session' )->addError ( Mage::helper ( 'adminhtml' )->__ ( 'Please select quote(s).' ) );
+			Mage::getSingleton ( 'adminhtml/session' )->addError ( Mage::helper ( 'adminhtml' )->__ ( 'Please select article(s).' ) );
 		} else {
 			try {
 				$quote = Mage::getModel ( 'note/article' );
@@ -168,13 +217,12 @@ class Eezy_Note_Adminhtml_ArticleController extends Mage_Adminhtml_Controller_Ac
 		$this->_redirect ( '*/*/index' );
 	}
 	public function tagAction() {
-		$this->_loadArticle();
+		$this->_loadArticle ();
 		$this->loadLayout ();
 		$this->renderLayout ();
 	}
-	
 	public function tagAjaxAction() {
-		$this->_loadArticle();
+		$this->_loadArticle ();
 		$this->loadLayout ();
 		$this->renderLayout ();
 	}

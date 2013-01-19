@@ -11,12 +11,14 @@ class Eezy_Note_Block_Adminhtml_Article_Grid extends Mage_Adminhtml_Block_Widget
 		$collection = Mage::getModel ( 'note/article' )->getCollection ();
 		
 		$ids = $this->getHotArticleIds ();
+		
 		if (empty ( $ids ))
 			$ids = array (
+
 					0
 			);
 		$collection->addExpressionFieldToSelect ( 'in_hot', 'id IN ({{ids}})', array (
-				'ids' => implode ( ',', $this->getHotArticleIds () )
+				'ids' => implode ( ',', $ids )
 		) );
 		
 		$this->setCollection ( $collection );
@@ -136,14 +138,14 @@ class Eezy_Note_Block_Adminhtml_Article_Grid extends Mage_Adminhtml_Block_Widget
 				'url' => $this->getUrl ( '*/*/massDeactive' ) 
 		) );
 
-		$this->getMassactionBlock ()->addItem ( 'hot', array (
+		$this->getMassactionBlock ()->addItem ( 'massHot', array (
 				'label' => $this->__ ( 'Mark Hot' ),
-				'url' => $this->getUrl ( '*/*/hot' )
+				'url' => $this->getUrl ( '*/*/massHot' )
 		) );
 
-		$this->getMassactionBlock ()->addItem ( 'unhot', array (
+		$this->getMassactionBlock ()->addItem ( 'massUnhot', array (
 				'label' => $this->__ ( 'Unmark Hot' ),
-				'url' => $this->getUrl ( '*/*/unhot' )
+				'url' => $this->getUrl ( '*/*/massUnhot' )
 		) );
 		
 		return $this;
