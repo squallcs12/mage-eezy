@@ -1,17 +1,22 @@
 <?php
 /* @var $this Eezy_Note_Block_Article_Grid */ 
 ?>
+<article class="grid_21 float_left">
+<?php if($this->getChild('hot_items')):?>
+<div class="wrapp_news_hot">
+<?php echo $this->getChildHtml('hot_items');?>
+</div>
+<div class="space20"></div>
+<?php endif;?>
 <ol class="wrapp_news">
 	<?php foreach($this->getCollection() as $article):?>
 	<?php /* @var $article Eezy_Note_Model_Article */?>
     <li>
-        <div class="user_news_avatar"><img src="<?php echo $article->getImageUrl()?>" width="80" height="80"/></div>
-        <div class="wrapp_content_news">
-        <a href="<?php echo $article->getUrl()?>" class="title_news"><?php echo $article->getTitle()?></a>
-        <span class="meaning_news">Meaning</span><br />
-        <span><?php echo $article->getShortDescription()?> <a href="<?php echo $article->getUrl()?>">more.</a></span><br />
-        </div>
-        <div class="clear"></div>
+        <?php echo $this->renderItem($article)?>
     </li>
     <?php endforeach;?>
 </ol>
+<?php if($this->getIsAbleGetMore()):?>
+<h4><a href="#" class="btn_download">Tải Thêm</a></h4>
+<?php endif;?>
+</article>
