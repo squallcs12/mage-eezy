@@ -15,11 +15,6 @@
 							<sort_order>1</sort_order>
 							<action>note/adminhtml_article/new</action>
 						</note_article_new>
-						<hot translate="title" module="note">
-							<title>Hot Article</title>
-							<sort_order>2</sort_order>
-							<action>note/adminhtml_article_hot/index</action>
-						</hot>
 					</children>
 				</note_article>
 				<note_tag translate="title" module="note">

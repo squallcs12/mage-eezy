@@ -1,4 +1,17 @@
 <?php
+
+/**
+ * Note article model
+ *
+ * @method string getTitle()
+ * @method Eezy_Note_Model_Article setTitle(string $value)
+ * @method string getShortDescription()
+ * @method Eezy_Note_Model_Article setShortDescription(string $value)
+ *
+ * @category    Eezy
+ * @package     Eezy_Note
+ * @author      Eezy Team <contact@eezy.vn>
+ */
 class Eezy_Note_Model_Article extends Mage_Core_Model_Abstract {
 	
 	protected $_tag = null;
@@ -53,5 +66,17 @@ class Eezy_Note_Model_Article extends Mage_Core_Model_Abstract {
     		$this->_tags = Mage::getModel('note/article_tag')->getCollection()->addFieldToFilter('article_id', array('eq' => $this->getId()));
     	}
     	return $this->_tags;
+    }
+    
+    /**
+     * Get url link to this article
+     * @return string
+     */
+    public function getUrl(){
+    	return '#123';
+    }
+    
+    public function getImageUrl(){
+    	return Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA) . $this->getImage();
     }
 }
