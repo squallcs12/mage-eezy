@@ -1,6 +1,10 @@
 <?php
 class Eezy_Note_Helper_Article extends Mage_Core_Helper_Abstract {
 	protected $_hotArticleIds;
+	/**
+	 * 
+	 * @var Eezy_Note_Model_Mysql4_Article_Collection
+	 */
 	protected $_lastestCollection;
 	
 	/**
@@ -41,6 +45,7 @@ class Eezy_Note_Helper_Article extends Mage_Core_Helper_Abstract {
 	public function getLastest() {
 		if (! $this->_lastestCollection) {
 			$this->_lastestCollection = Mage::getModel ( 'note/article' )->getCollection ();
+			$this->_lastestCollection->addFieldToFilter('status', array('eq' => 1));
 		}
 		return $this->_lastestCollection;
 	}

@@ -54,12 +54,18 @@ class Eezy_Note_Block_Adminhtml_Article_Edit_Tab_Main extends Mage_Adminhtml_Blo
 				'required' => true,
 				'name' => 'title' 
 		) );
-		
+
 		$fieldset->addField ( 'key_url', 'text', array (
 				'label' => Mage::helper ( 'note' )->__ ( 'Key URL' ),
 				'class' => '',
 				'required' => false,
-				'name' => 'key_url' 
+				'name' => 'key_url'
+		) );
+		$fieldset->addField ( 'order_number', 'text', array (
+				'label' => Mage::helper ( 'note' )->__ ( 'Order Number' ),
+				'class' => '',
+				'required' => false,
+				'name' => 'order_number' 
 		) );
 		
 		$fieldset->addField ( 'status', 'select', array (
@@ -75,6 +81,15 @@ class Eezy_Note_Block_Adminhtml_Article_Edit_Tab_Main extends Mage_Adminhtml_Blo
 								'label' => Mage::helper ( 'note' )->__ ( 'Inactive' ) 
 						) 
 				) 
+		) );
+
+		$fieldset->addField ( 'description', 'editor', array (
+				'name' => 'description',
+				'label' => Mage::helper ( 'note' )->__ ( 'Description' ),
+				'title' => Mage::helper ( 'note' )->__ ( 'Description' ),
+				'style' => 'width:98%; height:100px;',
+				'wysiwyg' => false,
+				'required' => true
 		) );
 		
 		$fieldset->addField ( 'content', 'editor', array (

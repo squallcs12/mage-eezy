@@ -5,8 +5,10 @@
  *
  * @method string getTitle()
  * @method Eezy_Note_Model_Article setTitle(string $value)
- * @method string getShortDescription()
- * @method Eezy_Note_Model_Article setShortDescription(string $value)
+ * @method string getDescription()
+ * @method Eezy_Note_Model_Article setDescription(string $value)
+ * @method string getKeyUrl()
+ * @method Eezy_Note_Model_Article setKeyUrl(string $value)
  *
  * @category    Eezy
  * @package     Eezy_Note
@@ -73,7 +75,7 @@ class Eezy_Note_Model_Article extends Mage_Core_Model_Abstract {
      * @return string
      */
     public function getUrl(){
-    	return '#123';
+    	return Mage::getBaseUrl() . $this->getKeyUrl() . '.html';
     }
     
     public function getImageUrl(){

@@ -66,6 +66,15 @@
             </note_read>
         </resources>
 	</global>
+	<frontend>
+		<layout>
+			<updates>
+				<note>
+					<file>note.xml</file>
+				</note>
+			</updates>
+		</layout>
+	</frontend>
 	<admin>
 		<routers>
 			<note>

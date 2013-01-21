@@ -28,6 +28,16 @@ class Eezy_Note_Block_Article_Grid extends Mage_Core_Block_Template{
 	}
 	
 	/**
+	 * 
+	 * @return Eezy_Note_Block_Article_Grid
+	 * @see Varien_Data_Collection_Db::addOrder
+	 */
+	public function addOrder($field, $direction){
+		$this->getCollection()->addOrder($field, $direction);
+		return $this;
+	}
+	
+	/**
 	 * Set Page size
 	 * @param int $size
 	 * @return Eezy_Note_Block_Article_Grid
@@ -58,5 +68,14 @@ class Eezy_Note_Block_Article_Grid extends Mage_Core_Block_Template{
 			$this->setCollection();
 		}
 		return $this->getData('collection');
+	}
+	
+	/**
+	 * Render item list view
+	 * @param Eezy_Note_Model_Article $article
+	 * @return string
+	 */
+	public function renderItem(Eezy_Note_Model_Article $article){
+		return $this->getLayout()->createBlock('note/article_grid_item')->setTemplate($this->getItemTemplate())->setArticle($article)->toHtml();
 	}
 }
