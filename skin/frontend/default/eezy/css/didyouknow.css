@@ -1,3 +1,6 @@
+div.didyouknow{
+    padding: 0px 30px;
+}
 div.didyouknow > div{
 	background: url('../images/cloud.png') center center no-repeat;
 	width: 142px;
@@ -15,5 +18,8 @@ div.didyouknow > div > div{
 	margin: auto;
 }
 .page-empty.didyouknow-index-random{
+	padding: 0px;
+}
+.page-empty.didyouknow-index-random div.didyouknow{
 	padding: 0px;
 }
