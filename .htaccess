@@ -207,5 +207,5 @@
 ## http://developer.yahoo.com/performance/rules.html#etags
 
     #FileETag none
-SetEnvIf Host article\.eezy\.local MAGE_RUN_CODE=article
-SetEnvIf Host article\.eezy\.local MAGE_RUN_TYPE=website
+SetEnvIf Host article\.eezy\.. MAGE_RUN_CODE=article
+SetEnvIf Host article\.eezy\.. MAGE_RUN_TYPE=website

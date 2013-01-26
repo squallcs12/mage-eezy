@@ -313,7 +313,6 @@ header {
 	height: 49px;
 }
 .wrapp_news_hot {
-	width:100%;
 	background-color:#e0f5cc;
 	padding:10px;
 }
@@ -324,7 +323,6 @@ header {
 	color:#333333;
 }
 .wrapp_news li {
-	width:100%;
 	padding:10px;
 	margin-bottom:20px;
 	border-bottom:2px solid #666666;
@@ -740,4 +738,25 @@ footer {
 }
 .answer_news_qa {
 	font-weight:bold;
+}
+
+.clearfix:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+ 
+.clearfix {
+	display: inline-block;
+}
+ 
+html[xmlns] .clearfix {
+	display: block;
+}
+ 
+* html .clearfix {
+	height: 1%;
 }
