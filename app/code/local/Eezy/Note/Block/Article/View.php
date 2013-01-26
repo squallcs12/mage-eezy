@@ -14,6 +14,7 @@ class Eezy_Note_Block_Article_View extends Mage_Core_Block_Template {
             $this->setArticle(Mage::registry('article'));
         else if ($this->hasData('article_id'))
             $this->setArticleById ($this->getData ('article_id'));
+        $this->getLayout()->getBlock('head')->setTitle($this->getArticle()->getTitle());
         return parent::_prepareLayout();
     }
     
