@@ -252,7 +252,7 @@ header {
 	background-position: -65px 0px;
 }
 /*--select_search-end--*/
-.content_general li {
+.content_general div {
 	margin-bottom:30px;
 }
 .wrapp_title span {
@@ -363,20 +363,24 @@ header {
 	display: block;
 	margin-bottom: -12px;
 }
-.title_news_detail {
+.title_news_detail, .content_general h4 {
 	color:#d64f26;
 	font-weight:bold;
 	display: block;
 	margin-bottom: 10px;
+	font-size: 100%;
 }
+
 .title_news_detail.all {
 	color:#0033ff;
 	font-weight:bold;
+	cursor: hand;
+	cursor: pointer;
 }
 .content_news_detail {
-	position:relative;
 	border:1px solid #666;
 	padding:10px;
+	display: none;
 }
 .meaning_news {
 	position:relative;

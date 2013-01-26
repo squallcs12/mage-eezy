@@ -1,4 +1,8 @@
 <?php
+/**
+ * @method string getName()
+ * @method string getKeyUrl()
+ */
 class Eezy_Note_Model_Tag extends Mage_Core_Model_Abstract {
 	protected $_tagTree = null;
 	protected $_tagTreeHash = null;
@@ -72,7 +76,11 @@ class Eezy_Note_Model_Tag extends Mage_Core_Model_Abstract {
 		parent::save ();
 	}
 	
+    /**
+     * Get url to tag page
+     * @return string
+     */
 	public function getUrl(){
-		return 'abc';
+		return Mage::getModel('core/url')->getUrl('tags/' . $this->getKeyUrl());
 	}
 }

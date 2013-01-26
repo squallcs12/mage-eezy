@@ -45,6 +45,16 @@
 				<class>Eezy_Note_Helper</class>
 			</note>
 		</helpers>
+        <events>
+            <controller_front_init_routers>
+                <observers>
+                    <cms>
+                        <class>Eezy_Note_Controller_Router</class>
+                        <method>initControllerRouters</method>
+                    </cms>
+                </observers>
+            </controller_front_init_routers>
+        </events>
 		 <resources>
             <note_setup>
                 <setup>

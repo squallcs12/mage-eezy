@@ -120,7 +120,7 @@ class Eezy_Note_Block_Adminhtml_Article_Edit_Tag extends Mage_Adminhtml_Block_Wi
 	
 	protected function _getArticleTags(){
 		$links = array();
-		foreach (Mage::registry('note_article')->getTagLinks() as $link) {
+		foreach (Mage::registry('note_article')->getTagsLinkCollection() as $link) {
 			$links[] = $link->getTagId();
 		}
 		return $links;

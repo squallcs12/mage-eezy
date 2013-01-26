@@ -27,4 +27,20 @@
 			</block>
 		</reference>
 	</note_article_index>
+	<note_article_view>
+        <reference name="root">
+            <action method="setTemplate"><template>page/2columns-right.phtml</template></action>
+        </reference>
+		<reference name="right">
+			<block type="cms/block" name="Promo">
+			    <action method="setBlockId"><block_id>note-tag-cloud</block_id></action>
+			</block> 
+			<block type="note/article_hot" name="article_hot" template="eezy/note/article/hot.phtml" />
+		</reference>
+		<reference name="content">
+			<block type="note/article_view" name="article_view" template="eezy/note/article/view.phtml">
+				<block type="note/article_view_tags" name="article_tags" template="eezy/note/article/view/tags.phtml"></block>
+			</block>
+		</reference>
+	</note_article_view>
 </layout>

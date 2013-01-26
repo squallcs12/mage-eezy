@@ -9,6 +9,12 @@
  * @method Eezy_Note_Model_Article setDescription(string $value)
  * @method string getKeyUrl()
  * @method Eezy_Note_Model_Article setKeyUrl(string $value)
+ * @method string getContent()
+ * @method Eezy_Note_Model_Article setContent(string $value)
+ * @method string getImage()
+ * @method Eezy_Note_Model_Article setImage(string $value)
+ * @method string getFullEntry()
+ * @method Eezy_Note_Model_Article setFullEntry(string $value)
  *
  * @category    Eezy
  * @package     Eezy_Note
@@ -35,7 +41,10 @@ class Eezy_Note_Model_Article extends Mage_Core_Model_Abstract {
 
         return $this;
     }
-    
+    /**
+     * Override parent::save
+     * Add url key and format key-url
+     */
     public function save(){
     	if(!$this->getKeyUrl()){
     		require_once 'Mage/Catalog/Helper/Product/Url.php';
@@ -49,9 +58,12 @@ class Eezy_Note_Model_Article extends Mage_Core_Model_Abstract {
     	}
     	parent::save();
     }
-    
+    /**
+     * 
+     * @param type $tagIds
+     */
     public function saveTag($tagIds){
-    	$tagLinks = $this->getTagLinks();
+    	$tagLinks = $this->getTagsLinkCollection();
     	foreach($tagLinks as $tagLink)
     		$tagLink->delete();
     	
@@ -62,14 +74,27 @@ class Eezy_Note_Model_Article extends Mage_Core_Model_Abstract {
     		$tagLink->save();
     	}
     }
-    
-    public function getTagLinks(){
+    /**
+     * Get article tags link collection
+     * @return Eezy_Note_Model_Mysql4_Article_Tag_Collection
+     */
+    public function getTagsLinkCollection(){
     	if($this->_tags === null){
     		$this->_tags = Mage::getModel('note/article_tag')->getCollection()->addFieldToFilter('article_id', array('eq' => $this->getId()));
     	}
     	return $this->_tags;
     }
-    
+    /**
+     * Get Tags Collection
+     * @return Eezy_Note_Model_Mysql4_Tag_Collection
+     */
+    public function getTagsCollection(){
+        $articleTagCollection = $this->getTagsLinkCollection();
+        $tagIds = $articleTagCollection->getTagIds();
+        return Mage::getModel('note/tag')->getCollection()->addFieldToFilter('id', array('in' => $tagIds));
+    }
+
+
     /**
      * Get url link to this article
      * @return string
@@ -78,7 +103,24 @@ class Eezy_Note_Model_Article extends Mage_Core_Model_Abstract {
     	return Mage::getBaseUrl() . $this->getKeyUrl() . '.html';
     }
     
+    /**
+     * Get image url
+     * @return string
+     */
     public function getImageUrl(){
     	return Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA) . $this->getImage();
+    }
+    /**
+     * Check if an indentifier is an article or not
+     * @param string $identifier
+     * @return integer | boolean
+     */
+    public function checkIdentifier($identifier){
+    	$identifier = basename($identifier, '.html');
+    	$article = $this->load($identifier, 'key_url');
+    	if(!$article->getId())
+            return false;
+    	Mage::register('article', $article);
+    	return $article->getId();
     }
 }
