@@ -1,0 +1,60 @@
+@font-face {  
+/*	  font-family: "Gravinamregular";  
+	  src: url('../fonts/Gravinamregular.eot');
+	  src: local("FFF"), url('../fonts/Gravinamregular.ttf') format("truetype");*/
+	}
+.setfont{
+	/*font-family:"Gravinamregular";*/
+	/*font-family:"Myriad Pro";*/
+	color: blue;
+}
+body{
+	/*font-family:"Gravinamregular";*/
+	font-family:Helvetica, sans-serif;
+	font-size:13px;
+	line-height: 17px;
+	color:#333;
+	}
+a:focus {
+	outline:1px dotted
+}
+hr {
+	border:0 #ccc solid;
+	border-top-width:1px;
+	clear:both;
+	height:0
+}
+h1 {
+	font-size:25px
+}
+h2 {
+	font-size:23px
+}
+h3 {
+	font-size:21px
+}
+h4 {
+	font-size:19px;
+}
+h5 {
+	font-size:17px
+}
+h6 {
+	font-size:15px
+}
+h1, h2, h3, h4, h5, h6 {
+	font-weight:bold;
+	line-height:20px;
+	}
+ol {
+	list-style:decimal
+}
+ul {
+	list-style:disc
+}
+p, dl, hr, h1, h2, h3, h4, h5, h6, ol, ul, pre, table, address, fieldset {
+}
+br{
+	line-height:2px;}
+.bold{
+	font-weight:bold;}

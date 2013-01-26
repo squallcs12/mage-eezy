@@ -1,6 +1,6 @@
 <?php
 
-class Eezy_Note_Admin_TagController extends Mage_Adminhtml_Controller_Action{
+class Eezy_Note_Adminhtml_TagController extends Mage_Adminhtml_Controller_Action{
 	
 	public function newAction(){
 		$this->loadLayout()->renderLayout();
@@ -34,8 +34,9 @@ class Eezy_Note_Admin_TagController extends Mage_Adminhtml_Controller_Action{
                 $postData = $this->getRequest()->getPost();
                 $noteModel = Mage::getModel('note/tag');
                
-                $noteModel->setId($this->getRequest()->getParam('id'))
+                $noteModel
                     ->setData($postData)
+                    ->setId($this->getRequest()->getParam('id'))
                     ->save();
                
                 Mage::getSingleton('adminhtml/session')->addSuccess(Mage::helper('adminhtml')->__('Item was successfully saved'));

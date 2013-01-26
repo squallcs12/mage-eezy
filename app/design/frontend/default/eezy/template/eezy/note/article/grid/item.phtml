@@ -1,0 +1,13 @@
+<?php /* @var $article Eezy_Note_Model_Article */ ?>
+<?php $article = $this->getArticle();?>
+<?php if($article):?>
+<div class="user_news_avatar">
+	<img src="<?php echo $article->getImageUrl()?>" width="80" height="80" />
+</div>
+<div class="wrapp_content_news">
+	<a href="<?php echo $article->getUrl()?>" class="title_news"><?php echo $article->getTitle()?></a>
+	<span class="meaning_news">Meaning</span><br /> <span><?php echo $article->getDescription()?> <a
+		href="<?php echo $article->getUrl()?>">more.</a></span><br />
+</div>
+<div class="clear"></div>
+<?php endif;?>

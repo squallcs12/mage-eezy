@@ -1,0 +1,47 @@
+.overlay {
+	/*background-color: rgba(0, 0, 0, 0.6);*/
+	bottom: 0;
+	cursor: default;
+	left: 0;
+	opacity: 0;
+	position: fixed;
+	right: 0;
+	top: 0;
+	visibility: hidden;
+	z-index: 1;
+}
+.overlay:target {
+    visibility: visible;
+    /*opacity: 1;*/
+}
+.popup_news {
+	width:100px;
+	height:32px;
+	position:absolute;
+	display: inline-block;
+	top: 10px;
+	left: 125px;
+	opacity: 0;
+	visibility: hidden;
+	z-index:2;
+	-webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+	-webkit-transition: opacity .5s, top .5s;
+    -moz-transition: opacity .5s, top .5s;
+    -ms-transition: opacity .5s, top .5s;
+    -o-transition: opacity .5s, top .5s;
+    transition: opacity .5s, top .5s;
+}
+.overlay:target+.popup_news {
+	top:-10px;
+    opacity: 1;
+    visibility: visible;
+}
+.popup_news .meaning_news{
+	background-color:#FFFFFF;}
+.popup_news .meaning_news:after{
+	background-color:none;
+	border-top: 5px solid white;}

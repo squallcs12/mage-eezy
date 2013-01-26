@@ -8,33 +8,30 @@
 				<note_article translate="title" module="note">
 					<title>Article</title>
 					<sort_order>1</sort_order>
+					<action>note/adminhtml_article/index</action>
 					<children>
 						<note_article_new translate="title" module="note">
 							<title>New Article</title>
 							<sort_order>1</sort_order>
-							<action>note/admin_article/new</action>
+							<action>note/adminhtml_article/new</action>
 						</note_article_new>
-						<note_article_list translate="title" module="note">
-							<title>List of Articles</title>
-							<sort_order>2</sort_order>
-							<action>note/admin_article/index</action>
-						</note_article_list>
 					</children>
 				</note_article>
 				<note_tag translate="title" module="note">
 					<title>Tags</title>
 					<sort_order>2</sort_order>
+					<action>note/adminhtml_tag/index</action>
 					<children>
-						<note_tag_new translate="title" module="note">
+						<new translate="title" module="note">
 							<title>New Tag</title>
 							<sort_order>1</sort_order>
-							<action>note/admin_tag/new</action>
-						</note_tag_new>
-						<note_tag_list translate="title" module="note">
-							<title>List of Tags</title>
+							<action>note/adminhtml_tag/new</action>
+						</new>
+						<cloud>
+							<title>Tags Cloud</title>
 							<sort_order>2</sort_order>
-							<action>note/admin_tag/index</action>
-						</note_tag_list>
+							<action>note/adminhtml_tag_cloud/index</action>
+						</cloud>
 					</children>
 				</note_tag>
 			</children>

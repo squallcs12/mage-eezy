@@ -1,0 +1,20 @@
+<?php
+/* @var $this Eezy_Note_Block_Article_Grid */ 
+?>
+<?php if($this->getChild('hot_items')):?>
+<div class="wrapp_news_hot">
+<?php echo $this->getChildHtml('hot_items');?>
+</div>
+<div class="space20"></div>
+<?php endif;?>
+<ol class="wrapp_news">
+	<?php foreach($this->getCollection() as $article):?>
+	<?php /* @var $article Eezy_Note_Model_Article */?>
+    <li>
+        <?php echo $this->renderItem($article)?>
+    </li>
+    <?php endforeach;?>
+</ol>
+<?php if($this->getIsAbleGetMore()):?>
+<h4><a href="#" class="btn_download">Tải Thêm</a></h4>
+<?php endif;?>

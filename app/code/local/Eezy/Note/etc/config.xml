@@ -17,6 +17,18 @@
                     <tag>
                         <table>eezy_note_tag</table>
                     </tag>
+                    <tag_cloud>
+                        <table>eezy_note_tag_cloud</table>
+                    </tag_cloud>
+                    <article>
+                        <table>eezy_note_article</table>
+                    </article>
+                    <article_tag>
+                        <table>eezy_note_article_tag</table>
+                    </article_tag>
+                    <article_hot>
+                        <table>eezy_note_article_hot</table>
+                    </article_hot>
                 </entities>
 			</note_mysql4>
 		</models>
@@ -24,12 +36,25 @@
 			<note>
 				<class>Eezy_Note_Block</class>
 			</note>
+			<note_adminhtml>
+				<class>Eezy_Note_Block_Adminhtml</class>
+			</note_adminhtml>
 		</blocks>
 		<helpers>
 			<note>
 				<class>Eezy_Note_Helper</class>
 			</note>
 		</helpers>
+        <events>
+            <controller_front_init_routers>
+                <observers>
+                    <cms>
+                        <class>Eezy_Note_Controller_Router</class>
+                        <method>initControllerRouters</method>
+                    </cms>
+                </observers>
+            </controller_front_init_routers>
+        </events>
 		 <resources>
             <note_setup>
                 <setup>
@@ -51,6 +76,15 @@
             </note_read>
         </resources>
 	</global>
+	<frontend>
+		<layout>
+			<updates>
+				<note>
+					<file>note.xml</file>
+				</note>
+			</updates>
+		</layout>
+	</frontend>
 	<admin>
 		<routers>
 			<note>
