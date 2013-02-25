@@ -8,9 +8,9 @@
             <action method="setTemplate"><template>page/1column.phtml</template></action>
         </reference>
 		<reference name="content">
-			<block type="note/article_grid" name="article_grid" template="eezy/note/article/grid.phtml">
+			<block type="note/article_grid" name="article_grid" template="note/article/grid.phtml">
 				<action method="setItemTemplate">
-					<template>eezy/note/article/grid/item.phtml</template>
+					<template>note/article/grid/item.phtml</template>
 				</action>
 				<action method="setIsAbleGetMore">
 					<bool>1</bool>
@@ -19,7 +19,7 @@
 					<field>order_number</field>
 					<direction>desc</direction>
 				</action>
-				<block type="note/article_grid_item" name="hot_items" template="eezy/note/article/grid/item.phtml">
+				<block type="note/article_grid_item" name="hot_items" template="note/article/grid/item.phtml">
 					<action method="setArticleById">
 						<id>1</id>
 					</action>		
@@ -32,15 +32,15 @@
             <action method="setTemplate"><template>page/2columns-right.phtml</template></action>
         </reference>
 		<reference name="right">
-            <block type="didyouknow/random" template="eezy/didyouknow/random.phtml"></block>
+            <block type="didyouknow/random" template="didyouknow/random.phtml"></block>
 			<block type="cms/block" name="Promo">
 			    <action method="setBlockId"><block_id>note-tag-cloud</block_id></action>
 			</block> 
-			<block type="note/article_hot" name="article_hot" template="eezy/note/article/hot.phtml" />
+			<block type="note/article_hot" name="article_hot" template="note/article/hot.phtml" />
 		</reference>
 		<reference name="content">
-			<block type="note/article_view" name="article_view" template="eezy/note/article/view.phtml">
-				<block type="note/article_view_tags" name="article_tags" template="eezy/note/article/view/tags.phtml"></block>
+			<block type="note/article_view" name="article_view" template="note/article/view.phtml">
+				<block type="note/article_view_tags" name="article_tags" template="note/article/view/tags.phtml"></block>
 			</block>
 		</reference>
 	</note_article_view>

@@ -42,6 +42,15 @@
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
+<script>
+    var jsCall = [];
+    jQuery(function(){
+        for(var i = 0; i < jsCall.length; i++){
+            jsCall[i]();
+        }
+        jsCall = {push : function(func){func();}}
+    });
+</script>
 <?php echo $this->getCssJsHtml() ?>
 <?php echo $this->getChildHtml() ?>
 <?php echo $this->helper('core/js')->getTranslatorScript() ?>
