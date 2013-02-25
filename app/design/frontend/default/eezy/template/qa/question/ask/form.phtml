@@ -1,0 +1,12 @@
+<?php
+
+echo $this->getForm()->toHtml();
+
+?>
+<script>
+    var askForm = new VarienForm('ask_form');
+    (function($){
+        $("#tags").parent().after('<div id="tag_panel"></div>');
+        displayTags("#tag_panel", []);
+    })(jQuery);
+</script>
