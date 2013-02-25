@@ -1,0 +1,10 @@
+<?php
+/* @var $this Eezy_Note_Block_Article_View_Tags */
+
+foreach($this->getTagsCollection() as $tag):
+/* @var $tag Eezy_Note_Model_Tag */
+?>
+<a class="tag" href="<?php echo $tag->getUrl() ?>"><span class="meaning_news"><?php echo $tag->getName() ?></span></a>
+<?php
+endforeach;
+?>
