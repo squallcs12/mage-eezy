@@ -88,7 +88,7 @@ class Eezy_Note_Block_Adminhtml_Article_Edit_Tab_Main extends Mage_Adminhtml_Blo
 				'label' => Mage::helper ( 'note' )->__ ( 'Description' ),
 				'title' => Mage::helper ( 'note' )->__ ( 'Description' ),
 				'style' => 'width:98%; height:100px;',
-				'wysiwyg' => false,
+				'wysiwyg' => true,
 				'required' => true
 		) );
 		

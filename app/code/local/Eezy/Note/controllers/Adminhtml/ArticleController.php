@@ -64,7 +64,7 @@ class Eezy_Note_Adminhtml_ArticleController extends Mage_Adminhtml_Controller_Ac
 					$uploader->setFilesDispersion ( false );
 					$uploader->save ( $path, $fileInfo ['name'] );
 					
-					$request->setPost ( $formKey, 'article/' . $fileInfo ['name'] );
+					$request->setPost ( $formKey, 'article/' . $uploader->getUploadedFileName() );
 				}
 			}
 		}
