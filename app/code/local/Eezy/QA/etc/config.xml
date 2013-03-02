@@ -14,9 +14,9 @@
 			<qa_resource>
 				<class>Eezy_QA_Model_Resource</class>
 				<entities>
-                    <eav_question>
-                        <table>eav_question</table>
-                    </eav_question>
+                    <question>
+                        <table>eezy_eav_question</table>
+                    </question>
                 </entities>
 			</qa_resource>
 		</models>
@@ -36,10 +36,12 @@
         <events>
             <controller_front_init_routers>
                 <observers>
+                    <!--
                     <cms>
                         <class>Eezy_QA_Controller_Router</class>
                         <method>initControllerRouters</method>
                     </cms>
+                    -->
                 </observers>
             </controller_front_init_routers>
         </events>
@@ -47,6 +49,7 @@
             <qa_setup>
                 <setup>
                     <module>Eezy_QA</module>
+                    <class>Eezy_QA_Model_Resource_Setup</class>
                 </setup>
                 <connection>
                     <use>core_setup</use>

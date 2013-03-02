@@ -78,7 +78,7 @@ class Eezy_Note_Adminhtml_ArticleController extends Mage_Adminhtml_Controller_Ac
 				
 				$this->_loadArticle ();
 				$noteModel = Mage::registry ( 'note_article' );
-				var_dump ( $postData );
+				//var_dump ( $postData );
 				$noteModel->setData ( $postData )->setId ( $this->getRequest ()->getParam ( 'id' ) )->save ();
 				
 				if (isset ( $postData ['tags'] ))
