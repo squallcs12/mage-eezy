@@ -28,11 +28,13 @@
 					<field>order_number</field>
 					<direction>desc</direction>
 				</action>
+                <!--
 				<block type="note/article_grid_item" name="hot_items" template="eezy/note/article/grid/item.phtml">
 					<action method="setArticleById">
 						<id>1</id>
 					</action>		
 				</block>
+                -->
 			</block>
 		</reference>
 	</note_article_index>
