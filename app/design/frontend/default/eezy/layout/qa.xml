@@ -48,7 +48,8 @@ and open the template in the editor.
         </reference>
         <reference name="content">
             <block type="qa/question_ask" name="question_ask" template="qa/question/ask.phtml">
-                <block type="qa/question_ask_form" name="form" template="qa/question/ask/form.phtml"></block>
+                <block type="qa/question_ask_form" name="form" template="qa/question/ask/form.phtml">
+                </block>
             </block>
         </reference>
     </qa_question_ask>
