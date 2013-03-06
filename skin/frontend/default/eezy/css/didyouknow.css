@@ -16,6 +16,7 @@ div.didyouknow > div{
 }
 div.didyouknow > div > div{
 	margin: auto;
+    font-weight: bold;
 }
 .page-empty.didyouknow-index-random{
 	padding: 0px;
