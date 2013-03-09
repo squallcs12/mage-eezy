@@ -10,19 +10,28 @@
 		</reference>
     </note_article>
 	<note_article_index>
-        <remove name="right"/>
+        
+		<reference name="right">
+            <block type="didyouknow/random" template="eezy/didyouknow/random.phtml"></block>
+			<block type="cms/block" name="Promo">
+			    <action method="setBlockId"><block_id>note-tag-cloud</block_id></action>
+			</block> 
+			<block type="note/article_hot" name="article_hot" template="eezy/note/article/hot.phtml" />
+		</reference>
+        
         <remove name="left"/>
 
         <reference name="root">
-            <action method="setTemplate"><template>page/1column.phtml</template></action>
+            <action method="setTemplate"><template>page/2columns-right.phtml</template></action>
         </reference>
+        
 		<reference name="content">
 			<block type="note/article_grid" name="article_grid" template="eezy/note/article/grid.phtml">
 				<action method="setItemTemplate">
 					<template>eezy/note/article/grid/item.phtml</template>
 				</action>
 				<action method="setIsAbleGetMore">
-					<bool>1</bool>
+					<bool>0</bool>
 				</action>
 				<action method="addOrder">
 					<field>order_number</field>
