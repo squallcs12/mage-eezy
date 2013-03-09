@@ -10,7 +10,7 @@ class Eezy_Note_Block_Article_View_Tags extends Mage_Core_Block_Template {
      * @return Eezy_Note_Block_Article_View
      */
     public function _prepareLayout() {
-        if (($article = Mage::registry('article'))){
+        if (($article = Mage::registry('article')) || ($article = $this->getArticle())){
             /* @var $article Eezy_Note_Model_Article */
             $this->setTagsCollection($article->getTagsCollection());
         }
