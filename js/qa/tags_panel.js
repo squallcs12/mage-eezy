@@ -175,31 +175,34 @@
         var html = '<div class="tagselect"><div class="left-menu"><ul>';
         for (var id in tags) {
             var tagLevel1 = tags[id];
+            var shortLv1 = createTagShort(tagLevel1.tag);
             tagLists.push({
-                id : id,
+                id : shortLv1,
                 name : tagLevel1.tag
             });
             html += '<li' + (tagLevel1.childs_count ? ' class="hasChild"' : '') + '>';
-            html += '<a href="#" id="t_t_'+createTagShort(tagLevel1.tag)+'" data-id="'+id+'" data-short="' + createTagShort(tagLevel1.tag) + '" class="tag ' + (tagLevel1.childs_count ? 'arrow' : '') + (selectedTags.indexOf(createTagShort(tagLevel1.tag)) != -1 ? ' active' : '') + '"><div class="fleft' + (tagLevel1.childs_count ? ' foldr' : '') + '"></div>' + tagLevel1.tag + '</a>';
+            html += '<a href="#" id="t_t_'+shortLv1+'" data-id="'+id+'" data-short="' + shortLv1 + '" class="tag ' + (tagLevel1.childs_count ? 'arrow' : '') + (selectedTags.indexOf(shortLv1) != -1 ? ' active' : '') + '"><div class="fleft' + (tagLevel1.childs_count ? ' foldr' : '') + '"></div>' + tagLevel1.tag + '</a>';
             if (tagLevel1.childs_count) {
                 html += '<div class="recent"><div><ul>';
                 for (var id2 in tagLevel1.childs) {
                     var tagLevel2 = tagLevel1.childs[id2];
+                    var shortLv2 = createTagShort(tagLevel2.tag);
                     tagLists.push({
-                        id : id2,
+                        id : shortLv2,
                         name : tagLevel2.tag
                     });
                     html += '<li' + (tagLevel2.childs_count ? ' class="hasChild"' : '') + '>';
-                    html += '<a href="#" id="t_t_'+createTagShort(tagLevel2.tag)+'" data-id="'+id2+'" data-short="' + createTagShort(tagLevel2.tag) + '" class="tag ' + (tagLevel2.childs_count ? 'arrow' : '') + (selectedTags.indexOf(createTagShort(tagLevel2.tag)) != -1 ? ' active' : '') + '"><div class="fleft' + (tagLevel2.childs_count ? ' foldr' : '') + '"></div>' + tagLevel2.tag + '</a>';
+                    html += '<a href="#" id="t_t_'+shortLv2+'" data-id="'+id2+'" data-short="' + shortLv2 + '" class="tag ' + (tagLevel2.childs_count ? 'arrow' : '') + (selectedTags.indexOf(shortLv2) != -1 ? ' active' : '') + '"><div class="fleft' + (tagLevel2.childs_count ? ' foldr' : '') + '"></div>' + tagLevel2.tag + '</a>';
                     if (tagLevel2.childs_count) {
                         html += '<div class="recent"><div><ul>';
                         for (var id3 in tagLevel2.childs) {
                             var tagLevel3 = tagLevel2.childs[id3];
+                            var shortLv3 = createTagShort(tagLevel3);
                             tagLists.push({
-                                id : id3,
+                                id : shortLv3,
                                 name : tagLevel3
                             });
-                            html += '<li><a href="#" id="t_t_'+createTagShort(tagLevel3)+'" data-id="'+id3+'" data-short="' + createTagShort(tagLevel3) + '" class="tag ' + (selectedTags.indexOf(createTagShort(tagLevel3)) != -1 ? ' active' : '') + '">' + tagLevel3 + '</a></li>';
+                            html += '<li><a href="#" id="t_t_'+shortLv3+'" data-id="'+id3+'" data-short="' + shortLv3 + '" class="tag ' + (selectedTags.indexOf(shortLv3) != -1 ? ' active' : '') + '">' + tagLevel3 + '</a></li>';
                         }
                         html += '</ul></div></div>';
                     }
@@ -233,11 +236,11 @@
             theme : 'facebook',
             onAdd : function(item){
                 if(!$("#t_t_" + item.id).hasClass('active'))
-                    $("#t_t_" + item.id).click();
+                    $("#t_t_" + item.id).addClass('active');
             }, 
             onDelete : function(item){
                 if($("#t_t_" + item.id).hasClass('active'))
-                    $("#t_t_" + item.id).click();
+                    $("#t_t_" + item.id).addClass('active');;
             }
         });
         

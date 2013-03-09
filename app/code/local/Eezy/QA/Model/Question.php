@@ -6,9 +6,14 @@
  */
 
 
-class Eezy_QA_Model_Question extends Mage_Core_Model_Abstract{
+class Eezy_QA_Model_Question extends Mage_Catalog_Model_Abstract{
+    
+    protected $_eventObject = 'eezy_qa_question';
+    protected $_eventPrefix = 'eezy_qa_question';
+    
     public function __construct() {
         parent::__construct();
         $this->_init('qa/question');
     }
+    
 }

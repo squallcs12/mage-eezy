@@ -6,7 +6,7 @@
  */
 
 
-class Eezy_QA_Model_Resource_Question extends Mage_Eav_Model_Entity_Abstract
+class Eezy_QA_Model_Resource_Question extends Mage_Catalog_Model_Resource_Abstract
 {
     protected function _construct()
     {

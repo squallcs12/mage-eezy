@@ -38,6 +38,9 @@ and open the template in the editor.
             <action method="addCss">
                 <stylesheet>css/token-input-facebook.css</stylesheet>
             </action>
+            <action method="setTitle">
+                <title>Ask Question</title>
+            </action>
         </reference>
         <reference name="root">
             <action method="setTemplate">
@@ -45,6 +48,7 @@ and open the template in the editor.
             </action>
         </reference>
         <reference name="right">
+            <remove name="right.poll"></remove>
         </reference>
         <reference name="content">
             <block type="qa/question_ask" name="question_ask" template="qa/question/ask.phtml">

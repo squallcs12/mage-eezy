@@ -54,9 +54,9 @@ $this->addAttribute('qa_question', 'url_key', array(
 
 $this->addAttribute('qa_question', 'content', array(
     //the EAV attribute type, NOT a MySQL varchar
-    'type'              => 'textarea',
+    'type'              => 'text',
     'label'             => 'Content',
-    'input'             => 'text',
+    'input'             => 'textarea',
     'class'             => '',
     'backend'           => '',
     'frontend'          => '',
@@ -69,9 +69,9 @@ $this->addAttribute('qa_question', 'content', array(
 
 $this->addAttribute('qa_question', 'sub_content', array(
     //the EAV attribute type, NOT a MySQL varchar
-    'type'              => 'textarea',
+    'type'              => 'text',
     'label'             => 'Sub Content',
-    'input'             => 'text',
+    'input'             => 'textarea',
     'class'             => '',
     'backend'           => '',
     'frontend'          => '',
