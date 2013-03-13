@@ -41,7 +41,9 @@
 		</reference>
 	</note_article_index>
 	<note_article_view>
-        
+        <reference name="head">
+            <action method="addItem"><type>skin_css</type><name>css/article.css</name><params/><if></if></action>
+        </reference>
 		<reference name="right">
             <block type="didyouknow/random" template="eezy/didyouknow/random.phtml"></block>
 			<block type="cms/block" name="Promo">
