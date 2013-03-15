@@ -10,6 +10,8 @@ class Eezy_Dictionary_Helper_Macmillan extends Mage_Core_Helper_Abstract {
         $word->setWord($w);
         $word->setKey('macmmillan');
         $word->setMean($this->getMeanFromLive($w));
+        if(!$word->getMean())
+            $word->setMean($this->getMeanFromLive(strtolower($w)));
         $word->save();
         return $word;
     }
