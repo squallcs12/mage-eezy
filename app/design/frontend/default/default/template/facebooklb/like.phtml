@@ -1,20 +1,4 @@
-<?php if (Mage::getStoreConfig('facebooklb/general/enabled')) : ?>
-    <?php if (!Mage::getStoreConfig('facebooklb/opengraph/enabled_op')) :
-    $facebookUrl = 'http://www.facebook.com/plugins/like.php?' .
-        'api_key = ' . Mage::getStoreConfig('facebooklb/general/appkey') .
-        '&href=' .  $this->helper('core/url')->getCurrentUrl() .
-        '&layout=' . Mage::getStoreConfig('facebooklb/general/layout') .
-        '&node_type=link&sdk=joey' .
-        '&show_faces=' . Mage::getStoreConfig('facebooklb/general/showfaces') .
-        '&action=' . Mage::getStoreConfig('facebooklb/general/verb') .
-        '&font=' . Mage::getStoreConfig('facebooklb/general/font') .
-        '&colorscheme="' . Mage::getStoreConfig('facebooklb/general/color') . '" scrolling="no" frameborder="0" allowTransparency="true" style="border:none; overflow:hidden; width:' . Mage::getStoreConfig('facebooklb/general/width') . 'px; height:' . Mage::getStoreConfig('facebooklb/general/height') . 'px">'
-        ;
-    ?>
-
-    <iframe src="<?php echo $facebookUrl; ?>" </iframe>
-
-    <?php else: ?>
+<?php if (Mage::getStoreConfig("facebooklb/{$this->getGroup()}/enabled")) : ?>
 
     <div id="fb-root"></div>
     <script>
@@ -34,8 +18,14 @@
         document.getElementById('fb-root').appendChild(e);
     }());
     </script>
-    <div class="fb-like-box"><div class="fb-like" data-layout="<?php echo Mage::getStoreConfig('facebooklb/general/layout'); ?>" data-href="<?php $this->helper('core/url')->getCurrentUrl();?>" data-send="false" data-width="Mage::getStoreConfig('facebooklb/general/width')" data-show-faces="false"></div></div>
+    <div class="fb-like-box">
+    	<div class="fb-like" 
+    		data-layout="<?php echo Mage::getStoreConfig("facebooklb/{$this->getGroup()}/layout"); ?>" 
+    		data-href="<?php $this->helper('core/url')->getCurrentUrl();?>" 
+    		data-send="<?php echo Mage::getStoreConfig("facebooklb/{$this->getGroup()}/send");?>" 
+    		data-width="<?php echo Mage::getStoreConfig("facebooklb/{$this->getGroup()}/width");?>" 
+    		data-show-faces="<?php echo Mage::getStoreConfig("facebooklb/{$this->getGroup()}/showfaces");?>"></div>
+    </div>
 
-    <?php endif; ?>
 
 <?php endif; ?>

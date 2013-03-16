@@ -1,0 +1,7 @@
+<?php 
+if (Mage::getStoreConfig("facebooklb/{$this->getGroup()}/enabled")) : ?>
+    <div class="fb-comments" 
+    	data-href="<?php echo $this->helper('core/url')->getCurrentUrl();?>"
+    	data-width="<?php echo Mage::getStoreConfig("facebooklb/{$this->getGroup()}/width");?>"
+    	data-num-posts="<?php echo Mage::getStoreConfig("facebooklb/{$this->getGroup()}/num_post");?>"></div>
+<?php endif; ?>
