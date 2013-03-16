@@ -23,15 +23,16 @@ jQuery(function(){
 			_gaq.push(['_trackEvent', 'Note', 'Dictionary', text, 0]);
 			$.ajax({
 				url : BASE_URL + 'dictionary/macmillan/ajax/w/' + text,
+				dataType: 'json',
 				success : function(data) {
 					if (!data) {
 						return;
 					}
-					$("#macmillan .word").html(text[0].toUpperCase() + text.substr(1));
-                    $("#macmillan .mean").html(data);
-                    $("#macmillan .link_search a.google").attr('href', 'http://www.google.com/search?q=' + text);
-                    $("#macmillan .link_search a.wiki").attr('href', 'http://en.wikipedia.org/wiki/' + text);
-                    $("#macmillan .link_search a.source").attr('href', 'http://www.macmillandictionary.com/dictionary/american/' + text);
+					$("#macmillan .word").html(data.word[0].toUpperCase() + data.word[0].substr(1));
+                    $("#macmillan .mean").html(data.mean);
+                    $("#macmillan .link_search a.google").attr('href', 'http://www.google.com/search?q=' + data.word[0]);
+                    $("#macmillan .link_search a.wiki").attr('href', 'http://en.wikipedia.org/wiki/' + data.word[0]);
+                    $("#macmillan .link_search a.source").attr('href', 'http://www.macmillandictionary.com/dictionary/american/' + data.word[0]);
                     
 					var h = $("#macmillan").height();
 					var w = $("#macmillan").width();
