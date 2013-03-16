@@ -28,7 +28,7 @@ jQuery(function(){
 					if (!data) {
 						return;
 					}
-					$("#macmillan .word").html(data.word[0].toUpperCase() + data.word[0].substr(1));
+					$("#macmillan .word").html(data.word[0].toUpperCase() + data.word.substr(1));
                     $("#macmillan .mean").html(data.mean);
                     $("#macmillan .link_search a.google").attr('href', 'http://www.google.com/search?q=' + data.word[0]);
                     $("#macmillan .link_search a.wiki").attr('href', 'http://en.wikipedia.org/wiki/' + data.word[0]);
