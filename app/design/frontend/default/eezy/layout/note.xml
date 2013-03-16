@@ -56,6 +56,12 @@
 		<reference name="content">
 			<block type="note/article_view" name="article_view" template="eezy/note/article/view.phtml">
 				<block type="note/article_view_tags" name="article_tags" template="eezy/note/article/view/tags.phtml"></block>
+				<block type="core/template" name="facebook_like">
+	                <action method="setTemplate" ifconfig="facebooklb/general/enabled">
+	                    <template>facebooklb/like.phtml</template>
+	                </action>
+	            </block>
+	            <block type="googleplusone/default" name="googleplusone_default" after="-" />
 			</block>
 		</reference>
 	</note_article_view>

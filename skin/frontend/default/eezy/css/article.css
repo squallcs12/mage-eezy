@@ -14,3 +14,8 @@
     list-style: disc;
     padding-left: 1em;
 }
+
+.wrapp_content_news span.description{
+	float: right;
+	width: 580px;
+}
