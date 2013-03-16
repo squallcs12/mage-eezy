@@ -13,10 +13,11 @@ class Eezy_Dictionary_Helper_Macmillan extends Mage_Core_Helper_Abstract {
 	 * @return string
 	 */
 	protected function _getDefninition($content){
-		$index = strpos($content, '<DEFINITION>') + strlen('<DEFINITION>');
+		$index = strpos($content, '<DEFINITION>');
 		if($index === false){
 			return $this->getRefFromContent($content);
 		}
+		$index += strlen('<DEFINITION>');
         $index2 = strpos($content, '</DEFINITION>', $index);
         $definition = substr($content, $index, $index2 - $index);
         return strip_tags($definition);
@@ -30,12 +31,12 @@ class Eezy_Dictionary_Helper_Macmillan extends Mage_Core_Helper_Abstract {
         $word->setMean($this->getMeanFromEntry($w));
         if(!$word->getMean())
             $word->setMean($this->getMeanFromEntry(strtolower($w)));
-        //$word->save();
+        $word->save();
         return $word;
     }
 
 	/**
-	 * Get Mean of a word from API
+	 * Get Mean of a word from API entry
 	 * @param string $w word need to get mean
 	 * @return string
 	 */
@@ -46,8 +47,11 @@ class Eezy_Dictionary_Helper_Macmillan extends Mage_Core_Helper_Abstract {
 		}
         return $this->_getDefninition($response->entryContent);
     }
+	
 	/**
-	 * 
+	 * Get Mean of a word from API best match
+	 * @param string $w word need to get mean
+	 * @return string
 	 */
 	public function getMeanFromBestMatch($w){
 		$response = $this->getBestMatch($w);
@@ -60,10 +64,19 @@ class Eezy_Dictionary_Helper_Macmillan extends Mage_Core_Helper_Abstract {
 	 * @return string
 	 */
 	public function getRefFromContent($content){
-		$index = strpos($content, '<GREF-TYPE>') + strlen('GREF-TYPE');
+		
+		//get ref sentence
+		$index = strpos($content, '<GREF-TYPE>') + strlen('<GREF-TYPE>');
 		$index2 = strpos($content, '</GREF-TYPE>', $index);
 		$ref = substr($content, $index, $index2 - $index);
-		return strip_tags($ref);
+		
+		//get ref entry
+		$index = strpos($content, '<GREF-ENTRY>') + strlen('<GREF-ENTRY>');
+		$index2 = strpos($content, '</GREF-ENTRY>', $index);
+		$entry = substr($content, $index, $index2 - $index);
+		
+		//combine return
+		return strip_tags($ref) . strip_tags($entry);
 	}
 
     /**
