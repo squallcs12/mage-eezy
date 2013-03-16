@@ -15,11 +15,7 @@
 		</reference>
 		<reference name="right">
 			<block type="didyouknow/random" template="eezy/didyouknow/random.phtml"></block>
-			<block type="cms/block" name="Promo">
-				<action method="setBlockId">
-					<block_id>note-tag-cloud</block_id>
-				</action>
-			</block>
+			<block type="page/html" name="tags_cloud" template="eezy/note/tag/cloud.phtml" />
 			<block type="note/article_hot" name="article_hot" template="eezy/note/article/hot.phtml" />
 		</reference>
 		<remove name="left"/>
