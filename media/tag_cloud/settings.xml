@@ -1,14 +1,14 @@
 <settings>
   <General_Properties>
     <componentWidth value="300"/>
-    <componentHeight value="300"/>
+    <componentHeight value="200"/>
     <assets value="menu.xml"/>
     <showAbout value="true"/>
   </General_Properties>
   <Tag_Properties>
     <aspect value="sphere"/>
     <offsetX value="123"/>
-    <offsetY value="141"/>
+    <offsetY value="91"/>
     <radius value="193"/>
     <perspective value="316"/>
     <rollOutSpeed value="10"/>
