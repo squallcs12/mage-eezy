@@ -30,9 +30,9 @@ jQuery(function(){
 					}
 					$("#macmillan .word").html(data.word[0].toUpperCase() + data.word.substr(1));
                     $("#macmillan .mean").html(data.mean);
-                    $("#macmillan .link_search a.google").attr('href', 'http://www.google.com/search?q=' + data.word[0]);
-                    $("#macmillan .link_search a.wiki").attr('href', 'http://en.wikipedia.org/wiki/' + data.word[0]);
-                    $("#macmillan .link_search a.source").attr('href', 'http://www.macmillandictionary.com/dictionary/american/' + data.word[0]);
+                    $("#macmillan .link_search a.google").attr('href', 'http://www.google.com/search?q=' + data.word);
+                    $("#macmillan .link_search a.wiki").attr('href', 'http://en.wikipedia.org/wiki/' + data.word);
+                    $("#macmillan .link_search a.source").attr('href', 'http://www.macmillandictionary.com/dictionary/american/' + data.word);
                     
 					var h = $("#macmillan").height();
 					var w = $("#macmillan").width();
