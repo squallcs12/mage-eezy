@@ -19,7 +19,9 @@
 	float: right;
 	width: 580px;
 }
-
+.user_news_avatar .fb-like-box{
+	margin-top: 2px;
+}
 .user_news_avatar .fb-like-box + .googleplusone{
 	margin-top: 2px;
 }
