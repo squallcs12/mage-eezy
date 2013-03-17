@@ -2,7 +2,6 @@
 Copyright (c) 2003-2011, CKSource - Frederico Knabben. All rights reserved.
 For licensing, see LICENSE.html or http://ckeditor.com/license
 */
-
 CKEDITOR.editorConfig = function( config )
 {
 	// Define changes to default configuration here. For example:
@@ -10,7 +9,6 @@ CKEDITOR.editorConfig = function( config )
 	// config.uiColor = '#AADC6E';
     
     config.entities_latin = false;
-    config.baseHref = BASE_URL + 'js/ckeditor';
     config.toolbar = 'MyToolbar';
     config.extraPlugins = 'ipa,read';
     config.removePlugins = 'elementspath';
