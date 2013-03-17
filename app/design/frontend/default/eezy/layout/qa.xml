@@ -18,6 +18,9 @@ and open the template in the editor.
                 <script>ckeditor/ckeditor.js</script>
             </action>
             <action method="addJs">
+                <script>ckeditor/config.js</script>
+            </action>
+            <action method="addJs">
                 <script>ckeditor/auto.js</script>
             </action>
             <action method="addJs">
@@ -48,7 +51,6 @@ and open the template in the editor.
             </action>
         </reference>
         <reference name="right">
-            <remove name="right.poll"></remove>
         </reference>
         <reference name="content">
             <block type="qa/question_ask" name="question_ask" template="qa/question/ask.phtml">

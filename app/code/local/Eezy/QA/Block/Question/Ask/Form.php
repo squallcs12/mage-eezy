@@ -7,6 +7,10 @@
 
 class Eezy_QA_Block_Question_Ask_Form extends Mage_Core_Block_Template {
 
+	/**
+	 * (non-PHPdoc)
+	 * @see Mage_Core_Block_Abstract::_prepareLayout()
+	 */
     public function _prepareLayout() {
 
         $form = new Varien_Data_Form(array(
