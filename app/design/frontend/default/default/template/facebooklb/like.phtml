@@ -1,0 +1,31 @@
+<?php if (Mage::getStoreConfig("facebooklb/{$this->getGroup()}/enabled")) : ?>
+
+    <div id="fb-root"></div>
+    <script>
+    window.fbAsyncInit = function() {
+        FB.init({
+          appId  : <?php echo Mage::getStoreConfig('facebooklb/general/appid'); ?>,
+          status : true,
+          cookie : true,
+          xfbml  : true
+        });
+    };
+
+    (function() {
+        var e = document.createElement('script');
+        e.src = document.location.protocol + '//connect.facebook.net/en_US/all.js';
+        e.async = true;
+        document.getElementById('fb-root').appendChild(e);
+    }());
+    </script>
+    <div class="fb-like-box">
+    	<div class="fb-like" 
+    		data-layout="<?php echo Mage::getStoreConfig("facebooklb/{$this->getGroup()}/layout"); ?>" 
+    		data-href="<?php $this->helper('core/url')->getCurrentUrl();?>" 
+    		data-send="<?php echo Mage::getStoreConfig("facebooklb/{$this->getGroup()}/send");?>" 
+    		data-width="<?php echo Mage::getStoreConfig("facebooklb/{$this->getGroup()}/width");?>" 
+    		data-show-faces="<?php echo Mage::getStoreConfig("facebooklb/{$this->getGroup()}/showfaces");?>"></div>
+    </div>
+
+
+<?php endif; ?>

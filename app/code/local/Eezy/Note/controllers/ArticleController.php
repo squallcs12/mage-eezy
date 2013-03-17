@@ -2,7 +2,12 @@
 
 class Eezy_Note_ArticleController extends Mage_Core_Controller_Front_Action{
 	public function indexAction(){
-		$this->loadLayout()->renderLayout();
+		$this->loadLayout();
+        
+        $filter = $this->getRequest()->getParam('filter');
+        $this->getLayout()->getBlock('article_grid')->addFilter($filter);
+        
+        $this->renderLayout();
 	}
 	
 	public function viewAction(){

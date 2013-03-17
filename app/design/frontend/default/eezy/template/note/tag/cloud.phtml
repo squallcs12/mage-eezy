@@ -1,17 +1,12 @@
-<?php
-
-/* @var $this Mage_Core_Block_Template */
-$tags = array();
-$tags[] = "<a href='http://neokid.vn/tag/activities/' style='font-size: 19.7419354839pt;'>activities</a>";
-$tags[] = "<a href='http://neokid.vn/tag/album/' style='font-size: 8pt;'>album</a>";
-
-?>
-<div id="wpcumuluswidgetcontent1628085">
-	<embed type="application/x-shockwave-flash"
-	src="<?php echo $this->getBaseUrl() . 'media/tagcloud.swf' ?>"
-	width="270" height="250" id="tagcloudflash" name="tagcloudflash"
-	bgcolor="#ffffff" quality="high" wmode="transparent"
-	allowscriptaccess="always"
-	flashvars="tcolor=0x00ff00&amp;tcolor2=0x333333&amp;hicolor=0x000000&amp;tspeed=100&amp;distr=true&amp;mode=tags&amp;tagcloud=<?php echo urlencode('<tags>'.implode('',$tags).'</tags>')?>">
-
-</div>
+<div id="DivTagCloudFX"></div>
+<script type="text/javascript">
+	var flashvars = {};
+	var params = {};
+	params.base = "/media/tag_cloud/";
+	params.scale = "noscale";
+	params.salign = "tl";
+	params.wmode = "transparent";
+	params.allowFullScreen = "true";
+	params.allowScriptAccess = "always";
+	swfobject.embedSWF("/media/tag_cloud/TagCloudFX.swf", "DivTagCloudFX", "300", "200", "9.0.0", false, flashvars, params); 
+</script>

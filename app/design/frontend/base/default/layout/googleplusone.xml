@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * GoogleAnalytics extension for Magento 
+ *
+ * @package     Yireo_GA
+ * @author      Yireo (http://www.yireo.com/)
+ * @copyright   Copyright (c) 2010 Yireo (http://www.yireo.com/)
+ * @license     Open Source License (OSL)
+ */
+ -->
+<layout>
+    <default>
+        <block type="googleplusone/default" name="googleplusone" />
+    </default>
+
+    <catalog_product_view>
+        <reference name="alert.urls">
+            <block type="googleplusone/default" name="googleplusone_default" after="-" />
+        </reference>
+    </catalog_product_view>
+</layout>

@@ -1,7 +1,6 @@
 <div class="wrapp_posts">
 <div class="bar_posts"><h4><?php echo $this->__('Bài viết đáng chú ý')?></h4></div>
 <div class="wrapp_content_posts">
-<span>Ngày / Tuần / Tháng / Năm</span><br />
 <ul class="content_posts">
 <?php foreach($this->getHotArticles() as $article):?>
 	<li><a href="<?php echo $article->getUrl()?>" title="<?php echo $article->getTitle()?>"><?php echo $article->getTitle()?></a></li>

@@ -81,6 +81,20 @@ class Eezy_Note_Model_Tag extends Mage_Core_Model_Abstract {
      * @return string
      */
 	public function getUrl(){
-		return Mage::getModel('core/url')->getUrl('tags/' . $this->getKeyUrl());
+		return Mage::getModel('core/url')->getUrl($this->getKeyUrl());
 	}
+    
+    /**
+     * Check if an indentifier is an article or not
+     * @param string $identifier
+     * @return integer | boolean
+     */
+    public function checkIdentifier($identifier){
+    	$identifier = basename($identifier, '.html');
+    	$tag = $this->load($identifier, 'key_url');
+    	if(!$tag->getId())
+            return false;
+    	Mage::register('current_tag', $tag);
+    	return $tag->getId();
+    }
 }

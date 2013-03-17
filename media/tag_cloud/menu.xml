@@ -1,0 +1,17 @@
+﻿<items>
+	<item link="http://article.eezy.vn/academic" target="" foto="assets/demo1/blip.swf">
+		<![CDATA[<h>Academic</h>]]>
+	</item>
+	<item link="http://article.eezy.vn/informative" target="" foto="assets/demo1/blip.swf">
+		<![CDATA[<h>Informative</h>]]>
+	</item>
+	<item link="http://article.eezy.vn/famous-writings" target="" foto="assets/demo1/blip.swf">
+		<![CDATA[<h>Famous Writings</h>]]>
+	</item>
+	<item link="http://article.eezy.vn/news" target="" foto="assets/demo1/blip.swf">
+		<![CDATA[<h>News</h>]]>
+	</item>
+	<item link="http://article.eezy.vn/blog" target="" foto="assets/demo1/blip.swf">
+		<![CDATA[<h>Blog</h>]]>
+	</item>
+</items>

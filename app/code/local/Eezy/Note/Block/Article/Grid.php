@@ -39,6 +39,19 @@ class Eezy_Note_Block_Article_Grid extends Mage_Core_Block_Template{
 		$this->getCollection()->addOrder($field, $direction);
 		return $this;
 	}
+    
+    /**
+     * Add filter to collection
+     * 
+     * @param type $filters
+     */
+    public function addFilter($filters){
+        if(isset($filters['tag_id'])){
+            $tag_id = $filters['tag_id'];
+            $this->getCollection()->join(array('article_tag' => 'note/article_tag'), 'article_tag.article_id = main_table.id', 'tag_id');
+            $this->getCollection()->addFieldToFilter('article_tag.tag_id', array('eq' => $tag_id));
+        }
+    }
 	
 	/**
 	 * Set Page size

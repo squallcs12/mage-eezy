@@ -254,6 +254,8 @@ header {
 /*--select_search-end--*/
 .content_general div {
 	margin-bottom:30px;
+    line-height: 19px;
+
 }
 .wrapp_title span {
 	font-weight:bold;
@@ -321,6 +323,11 @@ header {
 }
 .wrapp_news {
 	color:#333333;
+    font-size: 15px;
+}
+.content_general span{line-height: 19px;
+
+    font-size: 14px;
 }
 .wrapp_news li {
 	padding:10px;
@@ -336,18 +343,25 @@ header {
 	float: left;
 	background-color:#CCC;
 }
-.wrapp_content_news {
+.wrapp_content_news p{
 	float:right;
 	width:562px;
 }
+.wrapp_content_news p{
+    
+    
+line-height: 21px;
+font-weight: bold;
+    font-size: 15px;
+}
 .wrapp_content_news.qa_detail {
 	float:right;
-	width:562px;
+	width:600px;
 	border-bottom:1px solid #333;
 }
 .title_news {
 	line-height:21px;
-	font-size:20px;
+	font-size:18px;
 	color:#d64f26;
 	font-weight:bold;
 	margin-bottom: 10px;
@@ -366,7 +380,7 @@ header {
 	font-weight:bold;
 	display: block;
 	margin-bottom: 10px;
-	font-size: 100%;
+    font-size: 17px;
 }
 
 .title_news_detail.all {
@@ -376,9 +390,9 @@ header {
 	cursor: pointer;
 }
 .content_news_detail {
+    font-size: 17px;
 	border:1px solid #666;
 	padding:10px;
-	display: none;
 }
 .meaning_news {
 	position:relative;
@@ -524,11 +538,11 @@ header {
 	display:block;
 	margin:0 auto;
 	text-align:center;
-	padding-top:10px;
 	border-radius:10px;
 	box-shadow:inset 0 2px 0 rgba(255,255,255,0.5), inset 0px -2px 0 rgba(0,0,0,0.5);
-	width:300px;
-	height:30px;
+    height: 23px;
+    padding-top: 4px;
+    width: 220px;
 	color:#FFFFFF;
 	text-shadow:1px 1px 0 rgba(0,0,0,0.5);
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #6ebf19), color-stop(100%, #166500)); /* Chrome,Safari4+ */
@@ -557,13 +571,13 @@ footer {
 	margin-top:100px;
 }
 .wrapp_news_hot .user_news_avatar {
-	width:80px;
-	height:80px;
+	width:100px;
+	height:150px;
 	background-color:#ffffff;
 }
 .wrapp_news .user_news_avatar {
-	width:80px;
-	height:80px;
+	width:100px;
+	height:150px;
 	background-color:#bc1f1f;
 }
 .wrapp_news .number_content {
@@ -759,4 +773,11 @@ html[xmlns] .clearfix {
  
 * html .clearfix {
 	height: 1%;
+}
+
+.wrapp_right > div{
+    margin-bottom: 5px;
+}
+strong *{
+    font-weight: bold;
 }
