@@ -39,9 +39,12 @@
 //]]>
 </script>
 <![endif]-->
-
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
+<script>
+var BASE_URL = '<?php echo $this->getBaseUrl(); ?>';
+var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-19211824-1']);
+    _gaq.push(['_trackPageview']);
+</script>
 <script>
     var jsCall = [];
     jQuery(function(){
