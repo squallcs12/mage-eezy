@@ -82,22 +82,6 @@ $this->addAttribute('qa_question', 'sub_content', array(
     'unique'            => false,
 ));
 
-$this->addAttribute('qa_question', 'asked_date', array(
-    //the EAV attribute type, NOT a MySQL varchar
-    'type'              => 'datetime',
-    'label'             => 'Asked Date',
-    'input'             => 'datetime',
-    'class'             => '',
-    'backend'           => '',
-    'frontend'          => '',
-    'source'            => '',
-    'required'          => true,
-    'user_defined'      => true,
-    'default'           => '',
-    'unique'            => false,
-));
-
-
 $this->addAttribute('qa_question', 'customer_id', array(
     //the EAV attribute type, NOT a MySQL varchar
     'type'              => 'int',

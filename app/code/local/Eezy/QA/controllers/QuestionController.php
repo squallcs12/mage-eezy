@@ -13,8 +13,10 @@ class Eezy_QA_QuestionController extends Mage_Core_Controller_Front_Action{
     
     public function saveAction(){
         $question = Mage::getModel('qa/question');
-        $posts = $this->getRequest()->getPost();
-        $question->setData($posts);
+        
+        $question->setSubject(time());
+        
+        $question->setStoreId(Mage::app()->getStore()->getId());
         
         $question->save();
     }
