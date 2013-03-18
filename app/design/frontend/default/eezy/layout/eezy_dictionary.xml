@@ -5,8 +5,9 @@
             <action method="addJs">
                 <script>dictionary/macmillan.js</script>
             </action>
+            <action method="addCss"><stylesheet>css/dictionary.css</stylesheet></action>
         </reference>
-        <reference name="content">
+        <reference name="before_body_end">
             <block type="page/html" template="eezy/dictionary/macmillan.phtml"></block>
         </reference>
     </default>

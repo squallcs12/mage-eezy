@@ -37,7 +37,7 @@ jQuery(function(){
 					var h = $("#macmillan").height();
 					var w = $("#macmillan").width();
                     
-					$("#macmillan").css('top', currentCursor.y - h - 35 + 'px');
+					$("#macmillan").css('top', currentCursor.y + 10 + 'px');
 					var left = currentCursor.x - w / 2;
 					if (left < 0)
 						left = 0;
