@@ -53,10 +53,4 @@ jQuery(function(){
     $("body").click(function(){
     	$("#macmillan").hide();
     });
-    
-    $("#macmillan").hover(function(){
-    	
-    }, function(){
-    	$(this).fadeOut();
-    });
 });
