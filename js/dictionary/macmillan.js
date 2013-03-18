@@ -49,4 +49,14 @@ jQuery(function(){
 			_gaq.push(['_trackEvent', 'Note', 'Mark', text]);
 		}
     });
+    
+    $("body").click(function(){
+    	$("#macmillan").hide();
+    });
+    
+    $("#macmillan").hover(function(){
+    	
+    }, function(){
+    	$(this).fadeOut();
+    });
 });
