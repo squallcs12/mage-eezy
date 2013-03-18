@@ -2,7 +2,7 @@
 <?php $article = $this->getArticle();?>
 <?php if($article):?>
 <div class="user_news_avatar">
-	<img src="<?php echo $article->getImageUrl()?>" width="100" height="150" />
+	<a href="<?php echo $article->getUrl()?>"><img src="<?php echo $article->getImageUrl()?>" width="100" height="150" /></a>
 </div>
 <div class="wrapp_content_news">
 	<a href="<?php echo $article->getUrl()?>" class="title_news"><?php echo $article->getTitle()?></a>
@@ -15,8 +15,7 @@ foreach($article->getTagsCollection() as $tag):
 <a class="tag" href="<?php echo $tag->getUrl() ?>"><span class="meaning_news"><?php echo $tag->getName() ?></span></a>
 <?php
 endforeach;
-?><br /> <span><?php echo $article->getDescription()?> <a
-		href="<?php echo $article->getUrl()?>">more.</a></span><br />
+?><br /> <span><?php echo $article->getDescription()?></span><br />
 </div>
 <div class="clear"></div>
 <?php endif;?>
