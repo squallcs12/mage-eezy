@@ -82,14 +82,18 @@ class Eezy_Note_Block_Adminhtml_Article_Edit_Tab_Main extends Mage_Adminhtml_Blo
 						) 
 				) 
 		) );
+		
+		$configSettings = Mage::getSingleton('cms/wysiwyg_config')->getConfig(
+				array( 'add_widgets' => false, 'add_variables' => false, 'add_images' => true,  'files_browser_window_url'=> $this->getBaseUrl().'admin/cms_wysiwyg_images/index/'));
 
 		$fieldset->addField ( 'description', 'editor', array (
 				'name' => 'description',
 				'label' => Mage::helper ( 'note' )->__ ( 'Description' ),
 				'title' => Mage::helper ( 'note' )->__ ( 'Description' ),
 				'style' => 'width:98%; height:100px;',
-				'wysiwyg' => false,
-				'required' => true
+				'wysiwyg' => true,
+				'required' => true,
+				'config' => $configSettings
 		) );
 		
 		$fieldset->addField ( 'content', 'editor', array (
@@ -98,7 +102,8 @@ class Eezy_Note_Block_Adminhtml_Article_Edit_Tab_Main extends Mage_Adminhtml_Blo
 				'title' => Mage::helper ( 'note' )->__ ( 'Content' ),
 				'style' => 'width:98%; height:500px;',
 				'wysiwyg' => true,
-				'required' => true 
+				'required' => true,
+				'config' => $configSettings
 		) );
 		
 		$fieldset->addField ( 'full_entry', 'editor', array (
@@ -107,7 +112,8 @@ class Eezy_Note_Block_Adminhtml_Article_Edit_Tab_Main extends Mage_Adminhtml_Blo
 				'title' => Mage::helper ( 'note' )->__ ( 'Full Entry' ),
 				'style' => 'width:98%; height:500px;',
 				'wysiwyg' => true,
-				'required' => true 
+				'required' => true,
+				'config' => $configSettings
 		) );
 		
 		$form->setValues ( array (
