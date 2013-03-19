@@ -34,7 +34,7 @@
 class Eezy_Note_Block_Adminhtml_Article_Edit extends Mage_Adminhtml_Block_Widget_Form_Container {
 	public function __construct() {
 		$this->_objectId = 'id';
-		$this->_controller = 'adminhtml_article';
+		$this->_controller = 'article';
 		$this->_blockGroup = 'note';
 		
 		parent::__construct ();

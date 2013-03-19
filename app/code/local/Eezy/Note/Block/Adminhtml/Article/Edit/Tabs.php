@@ -49,7 +49,7 @@ class Eezy_Note_Block_Adminhtml_Article_Edit_Tabs extends Mage_Adminhtml_Block_W
 				'label' => Mage::helper ( 'adminhtml' )->__ ( 'Tags' ),
 				'title' => Mage::helper ( 'adminhtml' )->__ ( 'Tags' ),
 				'class' => 'ajax',
-				'url'	=> $this->getUrl('note/adminhtml_article/tag', array('_current' => true)),
+				'url'	=> $this->getUrl('*/article/tag', array('_current' => true)),
 		) );
 		return parent::_beforeToHtml ();
 	}
