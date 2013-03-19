@@ -87,13 +87,13 @@
 	</frontend>
 	<admin>
 		<routers>
-			<note>
-				<use>admin</use>
+			<adminhtml>
 				<args>
-					<module>Eezy_Note</module>
-					<frontName>note</frontName>
+					<modules>
+						<note before="Mage_Adminhtml">Eezy_Note_Adminhtml</note>
+					</modules>
 				</args>
-			</note>
+			</adminhtml>
 		</routers>
 	</admin>
 	<adminhtml>

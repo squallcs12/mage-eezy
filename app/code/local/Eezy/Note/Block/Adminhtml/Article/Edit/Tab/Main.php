@@ -84,7 +84,10 @@ class Eezy_Note_Block_Adminhtml_Article_Edit_Tab_Main extends Mage_Adminhtml_Blo
 		) );
 		
 		$configSettings = Mage::getSingleton('cms/wysiwyg_config')->getConfig(
-				array( 'add_widgets' => false, 'add_variables' => false, 'add_images' => true,  'files_browser_window_url'=> $this->getBaseUrl().'admin/cms_wysiwyg_images/index/'));
+				array( 	'add_widgets' => true, 
+						'add_variables' => true, 
+						'add_images' => true,  
+						'files_browser_window_url'=> $this->getBaseUrl().'admin/cms_wysiwyg_images/index/'));
 
 		$fieldset->addField ( 'description', 'editor', array (
 				'name' => 'description',
@@ -96,15 +99,16 @@ class Eezy_Note_Block_Adminhtml_Article_Edit_Tab_Main extends Mage_Adminhtml_Blo
 				'config' => $configSettings
 		) );
 		
-		$fieldset->addField ( 'content', 'editor', array (
+		$contentField = $fieldset->addField ( 'content', 'editor', array (
 				'name' => 'content',
 				'label' => Mage::helper ( 'note' )->__ ( 'Content' ),
 				'title' => Mage::helper ( 'note' )->__ ( 'Content' ),
 				'style' => 'width:98%; height:500px;',
-				'wysiwyg' => true,
+				'state' => 'html',
 				'required' => true,
 				'config' => $configSettings
 		) );
+		
 		
 		$fieldset->addField ( 'full_entry', 'editor', array (
 				'name' => 'full_entry',

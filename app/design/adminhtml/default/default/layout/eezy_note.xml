@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <layout>
-	<note_adminhtml_tag_new>
+	<adminhtml_tag_new>
 		<reference name="content">
 			<block type="note/adminhtml_tag_edit_form" name="tag_edit_form" template="eezy/note/tag/edit.phtml"/>
 		</reference>
-	</note_adminhtml_tag_new>
-	<note_adminhtml_tag_edit>
+	</adminhtml_tag_new>
+	<adminhtml_tag_edit>
 		<reference name="content">
 			<block type="note/adminhtml_tag_edit_form" name="tag_edit_form" template="eezy/note/tag/edit.phtml"/>
 		</reference>
-	</note_adminhtml_tag_edit>
-	<note_adminhtml_tag_index>
+	</adminhtml_tag_edit>
+	<adminhtml_tag_index>
 		<reference name="content">
 			<block type="note/adminhtml_tag_grid" name="tag_grid"/>
 		</reference>
-	</note_adminhtml_tag_index>
-	<note_adminhtml_tag_grid>
+	</adminhtml_tag_index>
+	<adminhtml_tag_grid>
 		<block type="core/text_list" name="root" output="toHtml">
 			<block type="note/adminhtml_tag_grid" name="tag_edit_form"/>
 		</block>
-	</note_adminhtml_tag_grid>
+	</adminhtml_tag_grid>
 	
-	<note_adminhtml_article_new>
+	<adminhtml_article_new>
 		<reference name="head">
             <action method="setCanLoadExtJs"><flag>1</flag></action>
             <action method="addJs"><script>mage/adminhtml/variables.js</script></action>
@@ -46,20 +46,9 @@
         <reference name="js">
             <block type="adminhtml/template" name="adminhtml.permissions.user.roles.grid.js" template="permissions/user_roles_grid_js.phtml"/>
         </reference>
-    </note_adminhtml_article_new>
-	<note_adminhtml_article_edit>
-		<reference name="head">
-            <action method="setCanLoadExtJs"><flag>1</flag></action>
-            <action method="addJs"><script>mage/adminhtml/variables.js</script></action>
-            <action method="addJs"><script>mage/adminhtml/wysiwyg/widget.js</script></action>
-            <action method="addJs"><script>lib/flex.js</script></action>
-            <action method="addJs"><script>lib/FABridge.js</script></action>
-            <action method="addJs"><script>mage/adminhtml/flexuploader.js</script></action>
-            <action method="addJs"><script>mage/adminhtml/browser.js</script></action>
-            <action method="addJs"><script>prototype/window.js</script></action>
-            <action method="addItem"><type>js_css</type><name>prototype/windows/themes/default.css</name></action>
-            <action method="addItem"><type>js_css</type><name>prototype/windows/themes/magento.css</name></action>  
-        </reference>
+    </adminhtml_article_new>
+	<adminhtml_article_edit>
+		<update handle="editor"/>
         <reference name="menu">
             <action method="setActive"><menupath>note/article/new</menupath></action>
         </reference>
@@ -72,21 +61,21 @@
         <reference name="js">
             <block type="adminhtml/template" name="adminhtml.permissions.user.roles.grid.js" template="permissions/user_roles_grid_js.phtml"/>
         </reference>
-    </note_adminhtml_article_edit>
-    <note_adminhtml_article_index>
+    </adminhtml_article_edit>
+    <adminhtml_article_index>
         <reference name="menu">
             <action method="setActive"><menupath>note/article</menupath></action>
         </reference>
 		<reference name="content">
 			<block type="note/adminhtml_article_grid" name="article_grid"/>
 		</reference>
-    </note_adminhtml_article_index>
-	<note_adminhtml_article_grid>
+    </adminhtml_article_index>
+	<adminhtml_article_grid>
 		<block type="core/text_list" name="root" output="toHtml">
 			<block type="note/adminhtml_article_grid" name="article_grid"/>
 		</block>
-	</note_adminhtml_article_grid>
-	<note_adminhtml_article_tag>
+	</adminhtml_article_grid>
+	<adminhtml_article_tag>
 		<block type="core/text_list" name="root" output="toHtml">
 			<block type="note/adminhtml_article_edit_tag" name="article_edit_tag"/>
 			<block type="adminhtml/widget_grid_serializer" name="article_edit_tag_serializer">
@@ -100,22 +89,22 @@
                 </reference>
             </block>
 		</block>
-	</note_adminhtml_article_tag>
-	<note_adminhtml_article_tagajax>
+	</adminhtml_article_tag>
+	<adminhtml_article_tagajax>
 		<block type="core/text_list" name="root" output="toHtml">
 			<block type="note/adminhtml_article_edit_tag" name="article_edit_tag"/>
 		</block>
-	</note_adminhtml_article_tagajax>
+	</adminhtml_article_tagajax>
 	
-	<note_adminhtml_tag_cloud_index>
+	<adminhtml_tag_cloud_index>
 		<reference name="content">
 			<block type="note/adminhtml_tag_cloud_grid" name="tag_cloud_grid"/>
 		</reference>
-	</note_adminhtml_tag_cloud_index>
+	</adminhtml_tag_cloud_index>
 	
-	<note_adminhtml_tag_cloud_grid>
+	<adminhtml_tag_cloud_grid>
 		<block type="core/text_list" name="root" output="toHtml">
 			<block type="note/adminhtml_tag_cloud_grid" name="tag_cloud_grid"/>
 		</block>
-	</note_adminhtml_tag_cloud_grid>
+	</adminhtml_tag_cloud_grid>
 </layout>
