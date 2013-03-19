@@ -123,7 +123,6 @@ class Eezy_Note_Block_Adminhtml_Article_Edit_Tab_Main extends Mage_Adminhtml_Blo
 		$form->setValues ( array (
 				'status' => 1 
 		) );
-		
 		if (Mage::getSingleton ( 'adminhtml/session' )->getNoteArticleData ()) {
 			$form->setValues ( Mage::getSingleton ( 'adminhtml/session' )->getNoteArticleData () );
 			Mage::getSingleton ( 'adminhtml/session' )->setNoteArticleData ( null );

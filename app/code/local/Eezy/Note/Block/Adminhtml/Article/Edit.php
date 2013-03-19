@@ -35,7 +35,7 @@ class Eezy_Note_Block_Adminhtml_Article_Edit extends Mage_Adminhtml_Block_Widget
 	public function __construct() {
 		$this->_objectId = 'id';
 		$this->_controller = 'article';
-		$this->_blockGroup = 'note';
+		$this->_blockGroup = 'note_adminhtml';
 		
 		parent::__construct ();
 		
@@ -44,7 +44,7 @@ class Eezy_Note_Block_Adminhtml_Article_Edit extends Mage_Adminhtml_Block_Widget
 	}
 	public function getHeaderText() {
 		if (Mage::registry ( 'note_article' ) && Mage::registry ( 'note_article' )->getId ()) {
-			return $this->__ ( 'Edit article' );
+			return $this->__ ( 'Edit article "%s"',  Mage::registry ( 'note_article' )->getTitle());
 		} else {
 			return $this->__ ( 'New article' );
 		}

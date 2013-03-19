@@ -22,18 +22,7 @@
 	</adminhtml_tag_grid>
 	
 	<adminhtml_article_new>
-		<reference name="head">
-            <action method="setCanLoadExtJs"><flag>1</flag></action>
-            <action method="addJs"><script>mage/adminhtml/variables.js</script></action>
-            <action method="addJs"><script>mage/adminhtml/wysiwyg/widget.js</script></action>
-            <action method="addJs"><script>lib/flex.js</script></action>
-            <action method="addJs"><script>lib/FABridge.js</script></action>
-            <action method="addJs"><script>mage/adminhtml/flexuploader.js</script></action>
-            <action method="addJs"><script>mage/adminhtml/browser.js</script></action>
-            <action method="addJs"><script>prototype/window.js</script></action>
-            <action method="addItem"><type>js_css</type><name>prototype/windows/themes/default.css</name></action>
-            <action method="addCss"><name>lib/prototype/windows/themes/magento.css</name></action>  
-        </reference>
+		<update handle="editor"/>
         <reference name="menu">
             <action method="setActive"><menupath>note/article/new</menupath></action>
         </reference>
@@ -48,19 +37,7 @@
         </reference>
     </adminhtml_article_new>
 	<adminhtml_article_edit>
-		<update handle="editor"/>
-        <reference name="menu">
-            <action method="setActive"><menupath>note/article/new</menupath></action>
-        </reference>
-        <reference name="left">
-            <block type="note_adminhtml/article_edit_tabs" name="note.admin.article.edit.tabs"/>
-        </reference>
-        <reference name="content">
-            <block type="note_adminhtml/article_edit" name="note.admin.article.edit"/>
-        </reference>
-        <reference name="js">
-            <block type="adminhtml/template" name="adminhtml.permissions.user.roles.grid.js" template="permissions/user_roles_grid_js.phtml"/>
-        </reference>
+		<update handle="adminhtml_article_new"/>
     </adminhtml_article_edit>
     <adminhtml_article_index>
         <reference name="menu">

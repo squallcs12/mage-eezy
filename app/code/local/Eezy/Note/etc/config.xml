@@ -14,22 +14,22 @@
 			<note_mysql4>
 				<class>Eezy_Note_Model_Mysql4</class>
 				<entities>
-                    <tag>
-                        <table>eezy_note_tag</table>
-                    </tag>
-                    <tag_cloud>
-                        <table>eezy_note_tag_cloud</table>
-                    </tag_cloud>
-                    <article>
-                        <table>eezy_note_article</table>
-                    </article>
-                    <article_tag>
-                        <table>eezy_note_article_tag</table>
-                    </article_tag>
-                    <article_hot>
-                        <table>eezy_note_article_hot</table>
-                    </article_hot>
-                </entities>
+					<tag>
+						<table>eezy_note_tag</table>
+					</tag>
+					<tag_cloud>
+						<table>eezy_note_tag_cloud</table>
+					</tag_cloud>
+					<article>
+						<table>eezy_note_article</table>
+					</article>
+					<article_tag>
+						<table>eezy_note_article_tag</table>
+					</article_tag>
+					<article_hot>
+						<table>eezy_note_article_hot</table>
+					</article_hot>
+				</entities>
 			</note_mysql4>
 		</models>
 		<blocks>
@@ -45,36 +45,36 @@
 				<class>Eezy_Note_Helper</class>
 			</note>
 		</helpers>
-        <events>
-            <controller_front_init_routers>
-                <observers>
-                    <cms>
-                        <class>Eezy_Note_Controller_Router</class>
-                        <method>initControllerRouters</method>
-                    </cms>
-                </observers>
-            </controller_front_init_routers>
-        </events>
-		 <resources>
-            <note_setup>
-                <setup>
-                    <module>Eezy_Note</module>
-                </setup>
-                <connection>
-                    <use>core_setup</use>
-                </connection>
-            </note_setup>
-            <note_write>
-                <connection>
-                    <use>core_write</use>
-                </connection>
-            </note_write>
-            <note_read>
-                <connection>
-                    <use>core_read</use>
-                </connection>
-            </note_read>
-        </resources>
+		<events>
+			<controller_front_init_routers>
+				<observers>
+					<cms>
+						<class>Eezy_Note_Controller_Router</class>
+						<method>initControllerRouters</method>
+					</cms>
+				</observers>
+			</controller_front_init_routers>
+		</events>
+		<resources>
+			<note_setup>
+				<setup>
+					<module>Eezy_Note</module>
+				</setup>
+				<connection>
+					<use>core_setup</use>
+				</connection>
+			</note_setup>
+			<note_write>
+				<connection>
+					<use>core_write</use>
+				</connection>
+			</note_write>
+			<note_read>
+				<connection>
+					<use>core_read</use>
+				</connection>
+			</note_read>
+		</resources>
 	</global>
 	<frontend>
 		<layout>
@@ -84,6 +84,15 @@
 				</note>
 			</updates>
 		</layout>
+		<routers>
+			<note>
+				<use>standard</use>
+				<args>
+					<module>Eezy_Note</module>
+					<frontName>note</frontName>
+				</args>
+			</note>
+		</routers>
 	</frontend>
 	<admin>
 		<routers>

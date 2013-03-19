@@ -14,13 +14,13 @@ $article = $this->getArticle();
 <div class="wrapp_content_news">
 <a href="#" class="title_news"><?php echo $article->getTitle()?></a>
 <?php echo $this->getChildHtml('article_tags') ?><br /><br />
-<span class="description"><?php echo $article->getDescription()?></span><br />
+<span class="description"><?php echo $this->getDescription()?></span><br />
 </div>
 <div class="clear"></div>
 </div>
 <div class="space30"></div>
 <div class="content_general">
-	<?php echo $article->getContent()?>
+	<?php echo $this->getContent()?>
     <div>
         <span class="title_news_detail all"><?php echo $this->__('Xem toàn bộ bài viết &gt;&gt;&gt;');?></span>
         <div class="content_news_detail">
@@ -31,7 +31,7 @@ $article = $this->getArticle();
         <div class="link_search"><a href="#">google</a>&nbsp;&nbsp;<a href="#">wiki</a><a class="source" href="#">source:Macmillan</a></div>
         </div>
          -->
-        <?php echo $article->getFullEntry()?>
+        <?php echo $this->getFullEntry()?>
         </div>
     </div>
 </div>

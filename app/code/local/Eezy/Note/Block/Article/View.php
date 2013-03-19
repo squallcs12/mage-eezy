@@ -27,4 +27,22 @@ class Eezy_Note_Block_Article_View extends Mage_Core_Block_Template {
         $this->setArticle(Mage::getModel('note/article')->load($id));
         return $this;
     }
+    
+    protected function _parseContent($content){
+    	$_cmsHelper = $this->helper('cms');
+    	$_process = $_cmsHelper->getBlockTemplateProcessor();
+    	return $_process->filter($content);
+    }
+    
+    public function getContent(){
+    	return $this->_parseContent($this->getArticle()->getContent());
+    }
+    
+    public function getDescription(){
+    	return $this->_parseContent($this->getArticle()->getDescription());
+    }
+    
+    public function getFullEntry(){
+    	return $this->_parseContent($this->getArticle()->getFullEntry());
+    }
 }
