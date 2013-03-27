@@ -33,16 +33,6 @@
 				<class>Eezy_Dictionary_Helper</class>
 			</dictionary>
 		</helpers>
-        <events>
-            <controller_front_init_routers>
-                <observers>
-                    <cms>
-                        <class>Eezy_Dictionary_Controller_Router</class>
-                        <method>initControllerRouters</method>
-                    </cms>
-                </observers>
-            </controller_front_init_routers>
-        </events>
 		 <resources>
             <dictionary_setup>
                 <setup>
