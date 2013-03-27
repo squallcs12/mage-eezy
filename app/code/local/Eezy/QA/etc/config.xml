@@ -15,7 +15,7 @@
 				<class>Eezy_QA_Model_Resource</class>
 				<entities>
                     <question>
-                        <table>eezy_eav_question</table>
+                        <table>eezy_qa_question</table>
                     </question>
                 </entities>
 			</qa_resource>
@@ -96,4 +96,11 @@
 			</updates>
 		</layout>
 	</adminhtml>
+	<default>
+		<url>
+			<convert>
+				<char1111_0001><from>ế</from><to>e</to></char1111_0001>
+			</convert>
+		</url>
+	</default>
 </config>

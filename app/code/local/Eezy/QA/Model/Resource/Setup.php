@@ -6,9 +6,6 @@
  */
 
 
-class Eezy_QA_Model_Resource_Setup extends Mage_Eav_Model_Entity_Setup {
+class Eezy_QA_Model_Resource_Setup extends Mage_Core_Model_Resource_Setup {
     
-    public function __construct($resourceName) {
-        parent::__construct($resourceName);
-    }
 }

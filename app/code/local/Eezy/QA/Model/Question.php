@@ -47,8 +47,41 @@ class Eezy_QA_Model_Question extends Eezy_QA_Model_Abstract{
     protected $_eventObject = 'eezy_qa_question';
     protected $_eventPrefix = 'eezy_qa_question';
     
+    /**
+     * 
+     */
     public function __construct() {
         parent::__construct();
         $this->_init('qa/question');
+    }
+    
+    protected function _generateUrlKey(){
+    	require_once 'Mage/Catalog/Helper/Product/Url.php';
+    	require_once 'Mage/Catalog/Model/Product/Url.php';
+    	$urlHelper = new Mage_Catalog_Helper_Product_Url();
+    	$keyFormated = $urlHelper->format($this->getSubject());
+    	
+    	$urlModel = new Mage_Catalog_Model_Product_Url();
+    	$keyUrl = $urlModel->formatUrlKey($keyFormated . '-' . $this->getId());
+    	$this->setUrlKey($keyUrl);
+    }
+    
+    /**
+     * (non-PHPdoc)
+     * @see Mage_Core_Model_Abstract::_beforeSave()
+     */
+    protected function _beforeSave(){
+    	if(!$this->getUrlKey() && $this->getSubject() && $this->getId()){
+    		$this->_generateUrlKey();
+    	}
+    	parent::_beforeSave();
+    }
+    
+    protected function _afterSave(){
+    	if(!$this->getUrlKey() && $this->getSubject() && $this->getId()){
+    		$this->_generateUrlKey();
+    		$this->save();
+    	}
+    	parent::_afterSave();
     }
 }

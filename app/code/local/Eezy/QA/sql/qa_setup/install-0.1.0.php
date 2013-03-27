@@ -9,232 +9,25 @@ $installer = $this;
 /* @var $installer Eezy_QA_Model_Resource_Setup */
 
 $installer->startSetup();
-$installer->addEntityType('qa_question', array(
-    //entity_mode is the URI you'd pass into a Mage::getModel() call
-    'entity_model'    => 'qa/question',
 
-    //table refers to the resource URI complexworld/eavblogpost
-    //<complexworld_resource>...<eavblogpost><table>eavblog_posts</table>
-    'table'           =>'qa/question',
-));
-
-$installer->createEntityTables(
-    $this->getTable('qa/question')
-);
-
-$this->addAttribute('qa_question', 'subject', array(
-    //the EAV attribute type, NOT a MySQL varchar
-    'type'              => 'varchar',
-    'label'             => 'Subject',
-    'input'             => 'text',
-    'class'             => '',
-    'backend'           => '',
-    'frontend'          => '',
-    'source'            => '',
-    'required'          => true,
-    'user_defined'      => true,
-    'default'           => '',
-    'unique'            => false,
-));
-
-$this->addAttribute('qa_question', 'url_key', array(
-    //the EAV attribute type, NOT a MySQL varchar
-    'type'              => 'varchar',
-    'label'             => 'URL',
-    'input'             => 'text',
-    'class'             => '',
-    'backend'           => '',
-    'frontend'          => '',
-    'source'            => '',
-    'required'          => true,
-    'user_defined'      => true,
-    'default'           => '',
-    'unique'            => true,
-));
-
-$this->addAttribute('qa_question', 'content', array(
-    //the EAV attribute type, NOT a MySQL varchar
-    'type'              => 'text',
-    'label'             => 'Content',
-    'input'             => 'textarea',
-    'class'             => '',
-    'backend'           => '',
-    'frontend'          => '',
-    'source'            => '',
-    'required'          => true,
-    'user_defined'      => true,
-    'default'           => '',
-    'unique'            => false,
-));
-
-$this->addAttribute('qa_question', 'sub_content', array(
-    //the EAV attribute type, NOT a MySQL varchar
-    'type'              => 'text',
-    'label'             => 'Sub Content',
-    'input'             => 'textarea',
-    'class'             => '',
-    'backend'           => '',
-    'frontend'          => '',
-    'source'            => '',
-    'required'          => true,
-    'user_defined'      => true,
-    'default'           => '',
-    'unique'            => false,
-));
-
-$this->addAttribute('qa_question', 'customer_id', array(
-    //the EAV attribute type, NOT a MySQL varchar
-    'type'              => 'int',
-    'label'             => 'Customer ID',
-    'input'             => 'datetime',
-    'class'             => '',
-    'backend'           => '',
-    'frontend'          => '',
-    'source'            => '',
-    'required'          => true,
-    'user_defined'      => true,
-    'default'           => '',
-    'unique'            => false,
-));
-
-$this->addAttribute('qa_question', 'view_count', array(
-    //the EAV attribute type, NOT a MySQL varchar
-    'type'              => 'int',
-    'label'             => 'Views',
-    'input'             => 'text',
-    'class'             => '',
-    'backend'           => '',
-    'frontend'          => '',
-    'source'            => '',
-    'required'          => false,
-    'user_defined'      => true,
-    'default'           => '',
-    'unique'            => false,
-));
-
-$this->addAttribute('qa_question', 'vote_count', array(
-    //the EAV attribute type, NOT a MySQL varchar
-    'type'              => 'int',
-    'label'             => 'Votes',
-    'input'             => 'text',
-    'class'             => '',
-    'backend'           => '',
-    'frontend'          => '',
-    'source'            => '',
-    'required'          => false,
-    'user_defined'      => true,
-    'default'           => '',
-    'unique'            => false,
-));
+$table = $installer->getConnection()->newTable($installer->getTable('qa/question'));
 
 
-$this->addAttribute('qa_question', 'answer_count', array(
-    //the EAV attribute type, NOT a MySQL varchar
-    'type'              => 'int',
-    'label'             => 'Answers',
-    'input'             => 'text',
-    'class'             => '',
-    'backend'           => '',
-    'frontend'          => '',
-    'source'            => '',
-    'required'          => false,
-    'user_defined'      => true,
-    'default'           => '',
-    'unique'            => false,
-));
+$table
+	->addColumn('question_id', Varien_Db_Ddl_Table::TYPE_BIGINT, null, array(
+			'primary' => true,
+			'identity' => true,
+			'nullable' => false,
+			'unsigned' => true,	
+	), 'ID')
+	->addColumn('subject', Varien_Db_Ddl_Table::TYPE_VARCHAR, 255, array(), 'Question subject')
+	->addColumn('url_key', Varien_Db_Ddl_Table::TYPE_VARCHAR, 255, array(), 'Question short url key')
+	->addColumn('content', Varien_Db_Ddl_Table::TYPE_TEXT, null, array(), 'Question full content')
+	->addColumn('sub_content', Varien_Db_Ddl_Table::TYPE_TEXT, null, array(), 'Question short content version for listing')
+	->addColumn('customer_id', Varien_Db_Ddl_Table::TYPE_BIGINT, null, array(), 'Asker customer ID')
+	->addIndex('EEZY_QA_INDEX_QUESTION_KEY_URL', array('url_key'), array('INDEX'));
+	;
 
-$this->addAttribute('qa_question', 'favorite_count', array(
-    //the EAV attribute type, NOT a MySQL varchar
-    'type'              => 'int',
-    'label'             => 'Favorites',
-    'input'             => 'text',
-    'class'             => '',
-    'backend'           => '',
-    'frontend'          => '',
-    'source'            => '',
-    'required'          => false,
-    'user_defined'      => true,
-    'default'           => '',
-    'unique'            => false,
-));
-
-
-$this->addAttribute('qa_question', 'comment_count', array(
-    //the EAV attribute type, NOT a MySQL varchar
-    'type'              => 'int',
-    'label'             => 'Comments',
-    'input'             => 'text',
-    'class'             => '',
-    'backend'           => '',
-    'frontend'          => '',
-    'source'            => '',
-    'required'          => false,
-    'user_defined'      => true,
-    'default'           => '',
-    'unique'            => false,
-));
-
-
-
-$this->addAttribute('qa_question', 'is_bounty', array(
-    //the EAV attribute type, NOT a MySQL varchar
-    'type'              => 'int',
-    'label'             => 'Is Bounty',
-    'input'             => 'select',
-    'class'             => '',
-    'backend'           => '',
-    'frontend'          => '',
-    'source'            => 'eav/entity_attribute_source_boolean',
-    'required'          => false,
-    'user_defined'      => true,
-    'default'           => '',
-    'unique'            => false,
-));
-
-$this->addAttribute('qa_question', 'is_closed', array(
-    //the EAV attribute type, NOT a MySQL varchar
-    'type'              => 'int',
-    'label'             => 'Is Closed',
-    'input'             => 'select',
-    'class'             => '',
-    'backend'           => '',
-    'frontend'          => '',
-    'source'            => 'eav/entity_attribute_source_boolean',
-    'required'          => false,
-    'user_defined'      => true,
-    'default'           => '',
-    'unique'            => false,
-));
-
-$this->addAttribute('qa_question', 'is_deleted', array(
-    //the EAV attribute type, NOT a MySQL varchar
-    'type'              => 'int',
-    'label'             => 'Is Deleted',
-    'input'             => 'select',
-    'class'             => '',
-    'backend'           => '',
-    'frontend'          => '',
-    'source'            => 'eav/entity_attribute_source_boolean',
-    'required'          => false,
-    'user_defined'      => true,
-    'default'           => '',
-    'unique'            => false,
-));
-
-$this->addAttribute('qa_question', 'has_right_answer', array(
-    //the EAV attribute type, NOT a MySQL varchar
-    'type'              => 'int',
-    'label'             => 'Is Deleted',
-    'input'             => 'select',
-    'class'             => '',
-    'backend'           => '',
-    'frontend'          => '',
-    'source'            => 'eav/entity_attribute_source_boolean',
-    'required'          => false,
-    'user_defined'      => true,
-    'default'           => '',
-    'unique'            => false,
-));
-
+$installer->getConnection()->createTable($table);
 
 $installer->endSetup();

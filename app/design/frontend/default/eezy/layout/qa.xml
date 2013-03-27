@@ -6,8 +6,8 @@ and open the template in the editor.
 
 
 <layout>
-    <qa_question_ask>
-        <reference name="head"> 
+	<ckeditor>
+        <reference name="head">
             <action method="setCanLoadExtJs">
                 <flag>1</flag>
             </action> 
@@ -20,6 +20,10 @@ and open the template in the editor.
             <action method="addJs">
                 <script>ckeditor/ckeditor.js</script>
             </action>
+        </reference>
+	</ckeditor>
+	<qa_question_form>
+		<reference name="head">
             <action method="addJs">
                 <script>qa/tags_panel.js</script>
             </action>
@@ -38,6 +42,12 @@ and open the template in the editor.
             <action method="addCss">
                 <stylesheet>css/token-input-facebook.css</stylesheet>
             </action>
+		</reference>
+	</qa_question_form>
+    <qa_question_ask>
+    	<update handle="ckeditor" />
+    	<update handle="qa_question_form" />
+        <reference name="head">
             <action method="setTitle">
                 <title>Ask Question</title>
             </action>
@@ -56,4 +66,21 @@ and open the template in the editor.
             </block>
         </reference>
     </qa_question_ask>
+    <qa_question_list>
+        <reference name="root">
+            <action method="setTemplate">
+                <template>page/2columns-right.phtml</template>
+            </action>
+        </reference>
+        <reference name="head">
+       		<action method="setTitle">
+                <title>Questions</title>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="qa/question_list" name="question_list" template="qa/question/list.phtml">
+            	
+            </block>
+        </reference>    	
+    </qa_question_list>
 </layout>
