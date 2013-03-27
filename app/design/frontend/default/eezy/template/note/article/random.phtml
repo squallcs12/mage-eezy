@@ -13,7 +13,7 @@
 		/* @var $article Eezy_Note_Model_Article */
 		?>
 		<a
-			title="<?php echo $this->escapeHtml($article->getDescription())?>"
+			title="<?php echo strip_tags($article->getDescription())?>"
 			style="text-decoration: none; color: #666666;"
 			href="<?php echo $article->getUrl()?>"><?php echo $article->getTitle()?></a><br>
 		<br>
