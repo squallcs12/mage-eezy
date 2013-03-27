@@ -1,0 +1,22 @@
+<?php 
+/* @var $this Eezy_Note_Block_Article_Random */
+?><div class="module intro clearfix"
+	style="background: #f0f0f0; padding: 10px; -moz-border-radius: 12px; -webkit-border-radius: 12px; border-radius: 12px; border: 1px solid #ebcec5; box-shadow: 0 1px 2px rgba(34, 25, 25, 0.4); padding-top: 0; padding-left: 0; padding-right: 0;">
+	<h3
+		style="background: #d64f26; color: white; padding: 7px; -moz-border-radius: 10px 10px 0px 0px; border-radius: 10px 10px 0px 0px; margin: 0;">
+		<span
+			style="background: url('http://eezy.vn/img/image.png') 0px -244px no-repeat; float: left; height: 38px; position: relative; top: -14px; width: 49px; margin-left: 7px;">&nbsp;</span>Bài
+		viết hay
+	</h3>
+	<div style="clear: both; padding: 10px;">
+		<?php foreach ($this->getArticles() as $article):
+		/* @var $article Eezy_Note_Model_Article */
+		?>
+		<a
+			title="<?php echo $this->escapeHtml($article->getDescription())?>"
+			style="text-decoration: none; color: #666666;"
+			href="<?php echo $article->getUrl()?>"><?php echo $article->getTitle()?></a><br>
+		<br>
+		<?php endforeach;?>
+	</div>
+</div>
