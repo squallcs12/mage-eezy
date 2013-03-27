@@ -48,10 +48,10 @@
 		<events>
 			<controller_front_init_routers>
 				<observers>
-					<cms>
+					<note>
 						<class>Eezy_Note_Controller_Router</class>
 						<method>initControllerRouters</method>
-					</cms>
+					</note>
 				</observers>
 			</controller_front_init_routers>
 		</events>
