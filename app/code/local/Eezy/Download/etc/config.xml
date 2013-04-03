@@ -59,6 +59,15 @@
         		</download>
         	</updates>
         </layout>
+        <routers>
+            <download>
+                <use>standard</use>
+                <args>
+                    <module>Eezy_Download</module>
+                    <frontName>download</frontName>
+                </args>
+            </download>
+        </routers>
 	</frontend>
 	<admin>
 		<routers>
