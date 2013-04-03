@@ -27,7 +27,7 @@ $installer->getConnection()->createTable($table);
 $installer->run("INSERT INTO {$installer->getTable('didyouknow/quote')} (`content`) VALUES
 ('The first animal sent up to outer space was a dog.'),
 ('The coldest outdoor temperature ever recorded on earth was 127 below zero in Antarctica on August 24, 1960.'),
-('The \"countdown\" (counting down from 10 for an event such as New-Years Day) was first used in a 1929 German silent film called \"Die Frau I'm Monde\" (The Girl in the Moon).'),
+('The \"countdown\" (counting down from 10 for an event such as New-Years Day) was first used in a 1929 German silent film called \"Die Frau I\'m Monde\" (The Girl in the Moon).'),
 ('Every time the moon''s gravity causes a ten-foot tide at sea, all the continents on earth rise at least six inches.'),
 ('Police dogs were first used in 1816 in Scotland.'),
 ('It was the Romans who made the first popsicle. They took some ice and added flavors to it and then licked it.'),
