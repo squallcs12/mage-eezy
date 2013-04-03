@@ -14,9 +14,9 @@
 			</action>
 		</reference>
 		<reference name="right">
-			<block type="didyouknow/random" template="eezy/didyouknow/random.phtml"></block>
-			<block type="page/html" name="tags_cloud" template="eezy/note/tag/cloud.phtml" />
-			<block type="note/article_hot" name="article_hot" template="eezy/note/article/hot.phtml" />
+			<block type="didyouknow/random" template="didyouknow/random.phtml"></block>
+			<block type="page/html" name="tags_cloud" template="note/tag/cloud.phtml" />
+			<block type="note/article_hot" name="article_hot" template="note/article/hot.phtml" />
 		</reference>
 		<remove name="left"/>
 		<reference name="content">
@@ -49,8 +49,8 @@
 			</action>
 		</reference>
 		<reference name="right">
-			<block type="didyouknow/random" template="eezy/didyouknow/random.phtml"></block>
-			<block type="page/html" name="tags_cloud" template="eezy/note/tag/cloud.phtml" />
+			<block type="didyouknow/random" template="didyouknow/random.phtml"></block>
+			<block type="page/html" name="tags_cloud" template="note/tag/cloud.phtml" />
 			<block type="note/article_hot" name="article_hot" template="note/article/hot.phtml" />
 		</reference>
 		<reference name="content">
