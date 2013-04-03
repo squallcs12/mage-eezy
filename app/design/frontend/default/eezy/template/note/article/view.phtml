@@ -12,6 +12,13 @@ $article = $this->getArticle();
 	<?php echo $this->getChildHtml('googleplusone_default');?>
 </div>
 <div class="wrapp_content_news">
+<!-- Start Macmillan Logo-->
+<img src="http://article.eezy.local/media/partners/macmillan/logo.jpg" style="
+    float: right;
+    height: 93px;
+    margin-top: -9px;
+">
+<!-- End Macmillan Logo-->
 <a href="#" class="title_news"><?php echo $article->getTitle()?></a>
 <?php echo $this->getChildHtml('article_tags') ?><br /><br />
 <span class="description"><?php echo $this->getDescription()?></span><br />
@@ -22,7 +29,7 @@ $article = $this->getArticle();
 <div class="content_general">
 	<?php echo $this->getContent()?>
     <div>
-        <span class="title_news_detail all"><?php echo $this->__('Xem toàn b? bài vi?t &gt;&gt;&gt;');?></span>
+        <span class="title_news_detail all"><?php echo $this->__('Xem toàn bộ bài viết &gt;&gt;&gt;');?></span>
         <div class="content_news_detail">
         <!-- 
         <div class="content_news_popup">
