@@ -9,16 +9,16 @@
 		<models>
 			<download>
 				<class>Eezy_Download_Model</class>
-				<resourceModel>download_mysql4</resourceModel>
+				<resourceModel>download_resource</resourceModel>
 			</download>
-			<download_mysql4>
-				<class>Eezy_Download_Model_Mysql4</class>
+			<download_resource>
+				<class>Eezy_Download_Model_Resource</class>
 				<entities>
-                    <quote>
-                        <table>eezy_download_quote</table>
-                    </quote>
+                    <file>
+                        <table>eezy_download_file</table>
+                    </file>
                 </entities>
-			</download_mysql4>
+			</download_resource>
 		</models>
 		<blocks>
 			<download>

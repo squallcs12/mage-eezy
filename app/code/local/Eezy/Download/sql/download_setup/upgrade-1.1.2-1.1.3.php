@@ -19,6 +19,6 @@ $table = $installer->getConnection()
 ->addColumn('download_time', Varien_Db_Ddl_Table::TYPE_INTEGER, null, array(
 		'unsigned'  => true,
 		'nullable'  => false,
-		'default'   => '',
+		'default'   => '0',
 ), 'Download counter');
 $installer->getConnection()->createTable($table);
