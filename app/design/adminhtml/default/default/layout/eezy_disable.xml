@@ -5,4 +5,7 @@
 	        <remove name="dashboard" />
 	    </reference>
 	</adminhtml_dashboard_index>
+	<adminhtml_customer_edit>
+		<remove name="sales" />
+	</adminhtml_customer_edit>
 </layout>

@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * 
+ */
 class Eezy_Note_Block_Article_Grid extends Mage_Core_Block_Template{
 	
 	public function _prepareLayout(){

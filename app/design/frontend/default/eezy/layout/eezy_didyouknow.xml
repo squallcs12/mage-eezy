@@ -15,7 +15,7 @@
 			<action method="setTemplate"><template>page/empty.phtml</template></action>
 		</reference>
 		<reference name="content">
-			<block type="didyouknow/random" name="didyouknow.random" template="eezy/didyouknow/random.phtml" />
+			<block type="didyouknow/random" name="didyouknow.random" template="didyouknow/random.phtml" />
 		</reference>
 	</didyouknow_index_random>
 </layout>

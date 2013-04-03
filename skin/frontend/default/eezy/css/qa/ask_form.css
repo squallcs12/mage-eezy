@@ -1,0 +1,22 @@
+
+/* Ask Form */
+#ask_form #subject{
+    float: right;
+    width: 579px;
+    font-weight: 700;
+    font-size: 15px;
+}
+
+#ask_form #tags{
+    float: right;
+    width: 579px;
+    font-weight: 700;
+    font-size: 15px;
+}
+
+#ask_form .token-input-list-facebook{
+    float: right;
+    width: 579px;
+    clear: none;
+    border: 1px solid #5a5a5a;
+}

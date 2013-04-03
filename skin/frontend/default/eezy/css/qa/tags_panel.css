@@ -1,0 +1,306 @@
+/* 
+    Document   : tags_panel
+    Created on : Feb 20, 2013, 7:42:07 PM
+    Author     : Antipro
+    Description:
+        Purpose of the stylesheet follows.
+*/
+.tagselect {
+	left: -11px;
+	z-index: -1;
+	width: 171px;/* 171, 347, 523 */
+	height: 185px;
+	padding: 6px;
+	background: -webkit-linear-gradient(65deg,rgba(177, 165, 179, 0.6),rgba(158, 147, 147, 0.9),rgba(185, 175, 175, 0.5));
+	background: -moz-linear-gradient(65deg,rgba(187, 163, 163, 0.6),rgba(221, 200, 200, 0.9),rgba(0, 0, 0, 0.5));
+	background: -ms-linear-gradient(65deg,rgba(0, 0, 0, 0.6),rgba(187, 173, 173, 0.9),rgba(0, 0, 0, 0.5));
+	background: -o-linear-gradient(65deg,rgba(0, 0, 0, 0.6),rgba(182, 158, 158, 0.9),rgba(0, 0, 0, 0.5));
+	background: linear-gradient(65deg,rgba(0, 0, 0, 0.6),rgba(204, 177, 177, 0.9),rgba(0, 0, 0, 0.5));
+	border-bottom-width: 2px;
+	-webkit-box-shadow: inset 0px 0px 1px rgba(255,255,255,2.5);
+	moz-box-shadow: inset 0px 0px 1px rgba(255,255,255,2.5);
+	box-shadow: inset 0px 0px 1px rgba(255,255,255,2.5);
+	border-radius: 7px 7px 7px 7px;
+	bottom: 31px;
+	-webkit-transition: all 0.2s ease-out 0.2s;
+	-moz-transition: all 0.2s ease-out 0.2s;
+	-ms-transition: all 0.2s ease-out 0.2s;
+	-o-transition: all 0.2s ease-out 0.2s;
+	transition: all 0.2s ease-out 0.2s;
+	cursor: default;
+	opacity: 0.8;
+}
+
+.tagselect:hover {
+	visibility: visible;
+	opacity: 1;
+	z-index: 9999;
+}
+.tagselect.level2 {
+	width: 345px;
+}
+.tagselect.level3 {
+	width: 695px;
+}
+.tagselect .left-menu, .recent > div {
+	float: left;
+	display: inline;
+	background: #fff;
+	width: 170px;
+	-webkit-box-shadow: 0px 0px 1px rgba(255,255,255,0.5);
+	-moz-box-shadow: 0px 0px 1px rgba(255,255,255,0.5);
+	box-shadow: 0px 0px 1px rgba(255,255,255,0.5);
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	position: relative;
+	height: 185px;
+}
+ .recent > div  .recent > div {
+	width: 346px;
+ }
+.tagselect .left-menu ul {
+	padding: 2px;
+	margin: 0px;
+}
+
+.tagselect .left-menu li {
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+	width: 166px;
+	text-align: left;
+	float: left;
+}
+
+.tagselect .left-menu li a.tag {
+	color: #222;
+	text-decoration: none;
+	line-height: 27px;
+	margin-bottom: 1px;
+	padding: 0px 12px;
+	border: 1px solid transparent;
+	display: block;
+	position: relative;
+	float: none;
+	margin-right: 0 !important;
+	background: none;
+}
+
+/* Making Arrow with CSS Pseudo Element */
+.tagselect .left-menu li a.arrow:after {
+	content: "";
+	width: 0px;
+	height: 0px;
+	position: absolute;
+	left: 100%;
+	top: 9px;
+	margin-left: -16px;
+	border-width: 5px;
+	border-style: solid;
+	border-color: transparent transparent transparent #222;
+}
+
+/* Sliding Menu To Show the Recent Documents */
+.tagselect .left-menu .recent {
+	width: 170px;
+	padding: 3px;
+	background: -webkit-linear-gradient(65deg,rgba(177, 165, 179, 0.6),rgba(158, 147, 147, 0.9),rgba(185, 175, 175, 0.5));
+	background: -moz-linear-gradient(65deg,rgba(187, 163, 163, 0.6),rgba(221, 200, 200, 0.9),rgba(0, 0, 0, 0.5));
+	background: -ms-linear-gradient(65deg,rgba(0, 0, 0, 0.6),rgba(187, 173, 173, 0.9),rgba(0, 0, 0, 0.5));
+	background: -o-linear-gradient(65deg,rgba(0, 0, 0, 0.6),rgba(182, 158, 158, 0.9),rgba(0, 0, 0, 0.5));
+	background: linear-gradient(65deg,rgba(0, 0, 0, 0.6),rgba(204, 177, 177, 0.9),rgba(0, 0, 0, 0.5));
+	border-bottom-width: 2px;
+	-webkit-box-shadow: inset 0px 0px 1px rgba(255,255,255,2.5);
+	moz-box-shadow: inset 0px 0px 1px rgba(255,255,255,2.5);
+	box-shadow: inset 0px 0px 1px rgba(255,255,255,2.5);
+	border-radius: 7px 7px 0 0;
+	-webkit-box-shadow: inset 1px 0px 1px rgba(0,0,0,0.2);
+	-moz-box-shadow: inset 1px 0px 1px rgba(0,0,0,0.2);
+	box-shadow: inset 1px 0px 1px rgba(0,0,0,0.2);
+	position: absolute;
+	z-index: 1000;
+	top: -3px;
+	left: 164px;
+	visibility: hidden;
+	opacity: 0;
+	-webkit-border-radius: 0 3px 3px 0;
+	-moz-border-radius: 0 3px 3px 0;
+	border-radius: 7px;
+	-webkit-transition: all 0.2s ease-out 0.2s;
+	-moz-transition: all 0.2s ease-out 0.2s;
+	-ms-transition: all 0.2s ease-out 0.2s;
+	-o-transition: all 0.2s ease-out 0.2s;
+	transition: all 0.2s ease-out 0.2s;
+}
+.tagselect .left-menu .recent .recent{
+    width: 350px;
+}
+.tagselect .left-menu li:hover > .recent {
+	left: 170px;
+	visibility: visible;
+	opacity: 1;
+}
+
+.tagselect .left-menu li:hover > a.tag, .tagselect .left-menu li > a.tag:hover, .tagselect .left-menu li a.tag.active {
+	background: -webkit-linear-gradient(top,#E4F4FC,#ACDCF7) !important;
+	background: -moz-linear-gradient(top,#E4F4FC,#ACDCF7) !important;
+	background: -ms-linear-gradient(top,#E4F4FC,#ACDCF7) !important;
+	background: -o-linear-gradient(top,#E4F4FC,#ACDCF7) !important;
+	background: linear-gradient(top,#E4F4FC,#ACDCF7) !important;
+	border-color: #0CC0E1 !important;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	-webkit-box-shadow: inset 0 0 3px #fff;
+	-moz-box-shadow: inset 0 0 3px #fff;
+	box-shadow: inset 0 0 3px #fff;
+	color: #222 !important;
+}
+
+.fleft {
+	float: left;
+	margin: 3px 10px 0px -10px;
+	position: relative;
+}
+
+/* Creating Folders with CSS Gradients and Pseudo Elements */
+.foldr {
+	width: 20px;
+	height: 15px;
+	margin-top: 6px;
+	background: #F6EEAB;
+	background: -webkit-linear-gradient(top,#ECDE8C,#F6EEAB);
+	background: -moz-linear-gradient(top,#ECDE8C,#F6EEAB);
+	background: -ms-linear-gradient(top,#ECDE8C,#F6EEAB);
+	background: -o-linear-gradient(top,#ECDE8C,#F6EEAB);
+	background: linear-gradient(top,#ECDE8C,#F6EEAB);
+	border: 1px solid #DCC56C;
+	-webkit-box-shadow: 0 1px 0px rgba(0,0,0,0.2);
+	-moz-box-shadow: 0 1px 0px rgba(0,0,0,0.2);
+	box-shadow: 0 1px 0px rgba(0,0,0,0.2);
+	-webkit-border-radius: 1px;
+	-moz-border-radius: 1px;
+	border-radius: 1px;
+}
+
+.foldr:before {
+	content: "";
+	width: 8px;
+	height: 0px;
+	border-top: 3px solid #DCC56C;
+	display: block;
+	position: absolute;
+	bottom: 100%;
+	left: 0px;
+}
+
+/* Microsoft Word */
+.mw {
+	width: 12px;
+	height: 10px;
+	margin-left: -4px;
+	border: 2px solid #fff;
+	background: -webkit-linear-gradient(top,#fff,#0E70A9,#fff,#0E70A9,#fff,#fff,#0E70A9,#fff,#0E70A9);
+	background: -moz-linear-gradient(top,#fff,#0E70A9,#fff,#0E70A9,#fff,#fff,#0E70A9,#fff,#0E70A9);
+	background: -ms-linear-gradient(top,#fff,#0E70A9,#fff,#0E70A9,#fff,#fff,#0E70A9,#fff,#0E70A9);
+	background: -o-linear-gradient(top,#fff,#0E70A9,#fff,#0E70A9,#fff,#fff,#0E70A9,#fff,#0E70A9);
+	background: linear-gradient(top,#fff,#0E70A9,#fff,#0E70A9,#fff,#fff,#0E70A9,#fff,#0E70A9);
+	color: #023B62;
+	-webkit-box-shadow: 1px 1px 0px #bbb, -2px 4px 0px #0E70A9;
+	-moz-box-shadow: 1px 1px 0px #bbb, -2px 4px 0px #0E70A9;
+	box-shadow: 1px 1px 0px #bbb, -2px 4px 0px #0E70A9;
+	position: relative;
+}
+
+.mw:before {
+	content: "w";
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	background: #fff;
+	border: 2px solid #fff;
+	font-size: 8px;
+	line-height: 6px;
+}
+
+/* Opera Web Browser */
+.op {
+	font: bold 22px Cambaria, Georgia, Times, Serif;
+	color: #B73941;
+	line-height: normal;
+	margin-top: 0px;
+	margin-left: -8px;
+	text-shadow: 0 1px 1px #ddd;
+	position: relative;
+}
+
+/* Create Opera Shadow */
+.op:after {
+	content: "";
+	width: 10px;
+	height: 1px;
+	background: #666;
+	-webkit-box-shadow: 0 0 3px #000;
+	-moz-box-shadow: 0 0 3px #000;
+	box-shadow: 0 0 3px #000;
+	display: block;
+	position: absolute;
+	top: 86%;
+	left: 4px;
+}
+
+/* Ugly Clock */
+.jam {
+	margin-left: 10px;
+}
+
+.clear {
+	clear: both;
+}
+
+/* Let's Dancing! */
+@-webkit-keyframes slow{
+from {
+	-webkit-transform: translate(0px, -200px);
+	opacity: 0;
+}
+to {
+	-webkit-transform: translate(0px, 0px);
+	opacity: 1;
+}
+}
+@-moz-keyframes
+slow {from{
+	-moz-transform: translate(0px, -200px);
+	opacity: 0;
+}
+to {
+	-moz-transform: translate(0px, 0px);
+	opacity: 1;
+}
+}
+@-ms-keyframes
+slow {from{
+	-ms-transform: translate(0px, -200px);
+	opacity: 0;
+}
+to {
+	-ms-transform: translate(0px, 0px);
+	opacity: 1;
+}
+}
+@keyframes
+slow {from{
+	transform: translate(0px, -200px);
+	opacity: 0;
+}
+to {
+	transform: translate(0px, 0px);
+	opacity: 1;
+}
+}
+
+#tag_panel{
+    clear: both;
+}

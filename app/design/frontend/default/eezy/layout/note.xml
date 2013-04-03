@@ -20,9 +20,9 @@
 		</reference>
 		<remove name="left"/>
 		<reference name="content">
-			<block type="note/article_grid" name="article_grid" template="eezy/note/article/grid.phtml">
+			<block type="note/article_grid" name="article_grid" template="note/article/grid.phtml">
 				<action method="setItemTemplate">
-					<template>eezy/note/article/grid/item.phtml</template>
+					<template>note/article/grid/item.phtml</template>
 				</action>
 				<action method="setIsAbleGetMore">
 					<bool>0</bool>
@@ -51,11 +51,11 @@
 		<reference name="right">
 			<block type="didyouknow/random" template="eezy/didyouknow/random.phtml"></block>
 			<block type="page/html" name="tags_cloud" template="eezy/note/tag/cloud.phtml" />
-			<block type="note/article_hot" name="article_hot" template="eezy/note/article/hot.phtml" />
+			<block type="note/article_hot" name="article_hot" template="note/article/hot.phtml" />
 		</reference>
 		<reference name="content">
-			<block type="note/article_view" name="article_view" template="eezy/note/article/view.phtml">
-				<block type="note/article_view_tags" name="article_tags" template="eezy/note/article/view/tags.phtml"></block>
+			<block type="note/article_view" name="article_view" template="note/article/view.phtml">
+				<block type="note/article_view_tags" name="article_tags" template="note/article/view/tags.phtml"></block>
 				<block type="core/template" name="facebook_like">
 					<action method="setTemplate" ifconfig="facebooklb/article_likebutton/enabled">
 						<template>facebooklb/like.phtml</template>

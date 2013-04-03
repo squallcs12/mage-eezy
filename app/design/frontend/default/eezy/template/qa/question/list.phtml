@@ -1,0 +1,21 @@
+<?php
+$_questions = $this->getQuestions();
+?>
+<?php foreach($_questions as $_question):
+/* @var $_question Eezy_QA_Model_Question */
+?>
+<article class="question cleafix">
+	<div class="stats">
+		
+	</div>
+	<div class="description">
+		<h2><a class="title" href="<?php echo $_question->getQuestionUrl();?>"><?php echo $_question->getSubject()?></a></h2>
+		<div class="tags"></div>
+		<div class="description"><?php echo $_question->getSubContent()?></div>
+		<div class="asker">
+			<span class="time"><?php echo $this->__("Ask %s", $_question->getAskedDate())?></span>
+			<a class="asker" href="<?php echo $_question->getUser()->getProfileUrl()?>"><?php echo $_question->getUser()->getDisplayName()?></a>
+		</div>
+	</div>
+</article>
+<?php endforeach;?>

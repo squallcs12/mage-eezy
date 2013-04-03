@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+
+
+<layout>
+	<ckeditor>
+        <reference name="head">
+            <action method="setCanLoadExtJs">
+                <flag>1</flag>
+            </action> 
+            <action method="setCanLoadTinyMce">
+                <flag>1</flag>
+            </action>
+            <action method="addJs">
+                <script>ckeditor/auto.js</script>
+            </action>
+            <action method="addJs">
+                <script>ckeditor/ckeditor.js</script>
+            </action>
+        </reference>
+	</ckeditor>
+	<qa_question_form>
+		<reference name="head">
+            <action method="addJs">
+                <script>qa/tags_panel.js</script>
+            </action>
+            <action method="addJs">
+                <script>jquery.tokeninput.js</script>
+            </action>
+            <action method="addCss">
+                <stylesheet>css/qa/tags_panel.css</stylesheet>
+            </action>
+            <action method="addCss">
+                <stylesheet>css/qa/ask_form.css</stylesheet>
+            </action>
+            <action method="addCss">
+                <stylesheet>css/token-input.css</stylesheet>
+            </action>
+            <action method="addCss">
+                <stylesheet>css/token-input-facebook.css</stylesheet>
+            </action>
+		</reference>
+	</qa_question_form>
+    <qa_question_ask>
+    	<update handle="ckeditor" />
+    	<update handle="qa_question_form" />
+        <reference name="head">
+            <action method="setTitle">
+                <title>Ask Question</title>
+            </action>
+        </reference>
+        <reference name="root">
+            <action method="setTemplate">
+                <template>page/2columns-right.phtml</template>
+            </action>
+        </reference>
+        <reference name="right">
+        </reference>
+        <reference name="content">
+            <block type="qa/question_ask" name="question_ask" template="qa/question/ask.phtml">
+                <block type="qa/question_ask_form" name="form" template="qa/question/ask/form.phtml">
+                </block>
+            </block>
+        </reference>
+    </qa_question_ask>
+    <qa_question_list>
+        <reference name="root">
+            <action method="setTemplate">
+                <template>page/2columns-right.phtml</template>
+            </action>
+        </reference>
+        <reference name="head">
+       		<action method="setTitle">
+                <title>Questions</title>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="qa/question_list" name="question_list" template="qa/question/list.phtml">
+            	
+            </block>
+        </reference>    	
+    </qa_question_list>
+</layout>
