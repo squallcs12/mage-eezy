@@ -12,6 +12,13 @@ $article = $this->getArticle();
 	<?php echo $this->getChildHtml('googleplusone_default');?>
 </div>
 <div class="wrapp_content_news">
+<!-- Start Macmillan Logo-->
+<img src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA);?>partners/macmillan/logo.jpg" style="
+    float: right;
+    height: 93px;
+    margin-top: -9px;
+">
+<!-- End Macmillan Logo-->
 <a href="#" class="title_news"><?php echo $article->getTitle()?></a>
 <?php echo $this->getChildHtml('article_tags') ?><br /><br />
 <span class="description"><?php echo $this->getDescription()?></span><br />
