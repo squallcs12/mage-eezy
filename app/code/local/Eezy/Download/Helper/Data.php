@@ -22,6 +22,7 @@ class Eezy_Download_Helper_Data extends Mage_Core_Helper_Abstract{
 	public function increaseDownload($file){
 		$model = $this->_getFileModel()->load($file, 'file');
 		$model->setDownloadTime($model->getDownloadTime() + 1);
+		$model->save();
 		return 'http://download.eezy.vn/' . $file;
 	}
 }
